@@ -30,7 +30,7 @@ export default function PassportScreen() {
       setPlants(Array.isArray(data) ? data : []);
     } catch (e) {
       console.log('[Passport] load failed', e);
-      Alert.alert('Error', 'Failed to load your plant passport.');
+      Alert.alert('Error', 'Failed to load your plant journal.');
     } finally {
       setLoading(false);
     }
@@ -68,7 +68,7 @@ export default function PassportScreen() {
   }, []);
 
   const remove = useCallback((id: string) => {
-    Alert.alert('Delete Plant', 'Are you sure you want to remove this plant from your passport?', [
+    Alert.alert('Delete Plant', 'Are you sure you want to remove this plant from your journal?', [
       { text: 'Cancel', style: 'cancel' },
       { text: 'Delete', style: 'destructive', onPress: () => save(plants.filter(p => p.id !== id)) },
     ]);
@@ -140,8 +140,8 @@ export default function PassportScreen() {
           <View style={styles.headerIcon}>
             <Leaf color={Colors.light.luxuryGold} size={28} />
           </View>
-          <Text style={styles.headerTitle}>Plant Passport</Text>
-          <Text style={styles.headerSubtitle}>Build a unique, private catalog of your plants</Text>
+          <Text style={styles.headerTitle}>Plant Journal</Text>
+          <Text style={styles.headerSubtitle}>Keep track of your plant collection</Text>
           <TouchableOpacity style={styles.addBtn} onPress={openCreate} testID="add-plant">
             <Plus color="#fff" size={18} />
             <Text style={styles.addBtnText}>Add Plant</Text>
@@ -161,8 +161,8 @@ export default function PassportScreen() {
           renderItem={renderItem}
           ListEmptyComponent={
             <View style={styles.empty}>
-              <Text style={styles.emptyTitle}>No plants yet</Text>
-              <Text style={styles.emptySubtitle}>Start your collection by adding your first plant.</Text>
+              <Text style={styles.emptyTitle}>Your journal is empty</Text>
+              <Text style={styles.emptySubtitle}>Add your first plant to start tracking your collection.</Text>
             </View>
           }
         />

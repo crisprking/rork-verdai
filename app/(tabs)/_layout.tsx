@@ -55,7 +55,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Intelligence",
+          title: "Chat",
           tabBarIcon: ({ color, focused }) => (
             <MessageCircle 
               color={color} 
@@ -68,7 +68,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="identify"
         options={{
-          title: "Analysis",
+          title: "Identify",
           tabBarIcon: ({ color, focused }) => (
             <Search 
               color={color} 
@@ -94,7 +94,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="care"
         options={{
-          title: "Insights",
+          title: "Care",
           tabBarIcon: ({ color, focused }) => (
             <Heart 
               color={color} 
@@ -107,7 +107,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="passport"
         options={{
-          title: "Passport",
+          title: "Journal",
           tabBarIcon: ({ color, focused }) => (
             <Notebook 
               color={color} 

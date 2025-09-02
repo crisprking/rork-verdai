@@ -58,11 +58,11 @@ export default function DiagnoseScreen() {
         const messages: CoreMessage[] = [
           {
             role: 'system' as const,
-            content: 'You are Verdai, an advanced plant pathologist and physiologist specializing in comprehensive plant health assessment. Analyze specimens for: physiological stress indicators, pathogen symptoms, nutrient deficiencies, environmental stress factors, pest damage, and growth abnormalities. Provide: Health Status: [optimal/monitoring/intervention/critical], Pathology: [detailed symptom analysis], Etiology: [root cause analysis], Treatment Protocol: [specific interventions], Prevention Strategy: [long-term health management], Confidence: [0-100]%. Include scientific terminology and advanced diagnostic insights.',
+            content: 'You are a plant health assistant. Look at the plant photo and assess its health. Identify any problems like yellowing leaves, brown spots, wilting, or pest damage. Provide simple solutions and care tips. Keep it practical and easy to understand.',
           },
           {
             role: 'user' as const,
-            content: 'Please conduct a comprehensive plant health assessment, including physiological analysis, pathological examination, and environmental stress evaluation.',
+            content: 'Please check this plant for health issues and provide care advice.',
           },
         ];
 
@@ -234,8 +234,8 @@ export default function DiagnoseScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.6)" size={16} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>Physiological Assessment</Text>
-          <Text style={styles.headerSubtitle}>Advanced plant pathology & health optimization protocols</Text>
+          <Text style={styles.headerTitle}>Plant Health Check</Text>
+          <Text style={styles.headerSubtitle}>Diagnose plant problems and get solutions</Text>
           
           {usage && usage.tier !== 'premium' && (
             <View style={styles.limitIndicator}>
@@ -281,9 +281,9 @@ export default function DiagnoseScreen() {
                   <Sparkles color={Colors.light.luxuryGold} size={20} />
                 </View>
               </View>
-              <Text style={styles.uploadText}>Health Documentation</Text>
+              <Text style={styles.uploadText}>Check Plant Health</Text>
               <Text style={styles.uploadSubtext}>
-                Document physiological symptoms, leaf conditions, and growth patterns for comprehensive pathological analysis
+                Take a photo of your plant to check for health issues
               </Text>
               
               {/* Diagnosis tips */}
@@ -308,7 +308,7 @@ export default function DiagnoseScreen() {
                   style={styles.buttonGradient}
                 >
                   <Camera color="#FFFFFF" size={20} strokeWidth={2} />
-                  <Text style={styles.primaryButtonText}>Document Health Status</Text>
+                  <Text style={styles.primaryButtonText}>Take Photo</Text>
                 </LinearGradient>
               </TouchableOpacity>
 
@@ -318,7 +318,7 @@ export default function DiagnoseScreen() {
                 onPress={() => pickImage(false)}
               >
                 <ImageIcon color={Colors.light.luxuryPrimary} size={20} strokeWidth={2} />
-                <Text style={styles.secondaryButtonText}>Upload Health Documentation</Text>
+                <Text style={styles.secondaryButtonText}>Choose from Photos</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -359,12 +359,12 @@ export default function DiagnoseScreen() {
                   {diagnoseMutation.isPending ? (
                     <View style={styles.loadingContainer}>
                       <ActivityIndicator color="#FFFFFF" size="small" />
-                      <Text style={styles.loadingText}>Processing physiological assessment...</Text>
+                      <Text style={styles.loadingText}>Checking plant health...</Text>
                     </View>
                   ) : (
                     <>
                       <Sparkles color="#FFFFFF" size={20} strokeWidth={2} />
-                      <Text style={styles.diagnoseButtonText}>Analyze Plant Physiology</Text>
+                      <Text style={styles.diagnoseButtonText}>Check Health</Text>
                     </>
                   )}
                 </LinearGradient>
@@ -375,7 +375,7 @@ export default function DiagnoseScreen() {
 
         {result && (
           <View style={styles.resultSection}>
-            <Text style={styles.resultTitle}>Physiological Assessment Report</Text>
+            <Text style={styles.resultTitle}>Health Check Results</Text>
 
             <View style={styles.resultCard}>
               <View style={styles.statusHeader}>
@@ -397,7 +397,7 @@ export default function DiagnoseScreen() {
 
               {result.issues.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Pathological Findings</Text>
+                  <Text style={styles.sectionTitle}>Issues Found</Text>
                   {result.issues.map((issue, index) => (
                     <View key={index} style={styles.listItem}>
                       <Text style={styles.bullet}>•</Text>
@@ -409,7 +409,7 @@ export default function DiagnoseScreen() {
 
               {result.solutions.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Treatment Protocols</Text>
+                  <Text style={styles.sectionTitle}>Solutions</Text>
                   {result.solutions.map((solution, index) => (
                     <View key={index} style={styles.listItem}>
                       <Text style={styles.bullet}>•</Text>
@@ -421,7 +421,7 @@ export default function DiagnoseScreen() {
 
               {result.preventionTips.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={styles.sectionTitle}>Preventive Health Management</Text>
+                  <Text style={styles.sectionTitle}>Prevention Tips</Text>
                   {result.preventionTips.map((tip, index) => (
                     <View key={index} style={styles.listItem}>
                       <Text style={styles.bullet}>•</Text>

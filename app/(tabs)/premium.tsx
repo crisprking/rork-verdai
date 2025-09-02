@@ -276,8 +276,8 @@ export default function PremiumScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.8)" size={18} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>VerdAI Premium</Text>
-          <Text style={styles.headerSubtitle}>Advanced botanical intelligence at your fingertips</Text>
+          <Text style={styles.headerTitle}>Botanica Premium</Text>
+          <Text style={styles.headerSubtitle}>Unlock more features for your plant care journey</Text>
         </View>
       </LinearGradient>
 
@@ -292,10 +292,10 @@ export default function PremiumScreen() {
                 <Crown color={Colors.light.luxuryGold} size={40} strokeWidth={2} />
                 <Sparkles color={Colors.light.luxuryAccent} size={20} style={styles.statusSparkle} />
               </View>
-              <Text style={styles.statusTitle}>VerdAI Premium Active</Text>
+              <Text style={styles.statusTitle}>Botanica Premium Active</Text>
               <Text style={styles.statusText}>
-                You have premium access to our complete botanical intelligence suite with 10x more daily usage. 
-                Your plants are in expert AI care.
+                You have premium access with increased daily limits and priority support. 
+                Thank you for supporting Botanica!
               </Text>
               
               {/* Premium Stats Dashboard */}
@@ -344,9 +344,9 @@ export default function PremiumScreen() {
           <>
             {/* Revenue-optimized header with urgency */}
             <View style={styles.upgradeHeader}>
-              <Text style={styles.sectionTitle}>Unlock VerdAI Premium Intelligence</Text>
+              <Text style={styles.sectionTitle}>Upgrade to Premium</Text>
               <Text style={styles.upgradeSubtitle}>
-                Join 150,000+ plant enthusiasts who upgraded for enhanced botanical intelligence
+                Get more daily usage and support the development of Botanica
               </Text>
               
               {/* Usage pressure */}
@@ -468,7 +468,7 @@ export default function PremiumScreen() {
 
             {/* Enhanced free vs premium comparison with urgency */}
             <View style={styles.comparisonSection}>
-              <Text style={styles.comparisonTitle}>Why 150,000+ Users Choose VerdAI Premium</Text>
+              <Text style={styles.comparisonTitle}>Free vs Premium Comparison</Text>
               
               <View style={styles.comparisonTable}>
                 <View style={styles.comparisonHeader}>
@@ -516,7 +516,7 @@ export default function PremiumScreen() {
             
             {/* Enhanced testimonials for social proof */}
             <View style={styles.testimonialsSection}>
-              <Text style={styles.testimonialsTitle}>Trusted by Plant Experts Worldwide</Text>
+              <Text style={styles.testimonialsTitle}>What Users Say</Text>
               
               <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.testimonialsScroll}>
                 <View style={styles.testimonialCard}>
@@ -590,13 +590,10 @@ export default function PremiumScreen() {
                 <View style={styles.scarcityIcon}>
                   <Crown color={Colors.light.luxuryGold} size={20} />
                 </View>
-                <Text style={styles.scarcityTitle}>Limited Time: Premium Launch Pricing</Text>
+                <Text style={styles.scarcityTitle}>Support Botanica Development</Text>
                 <Text style={styles.scarcityText}>
-                  Lock in these exclusive rates before they increase. Free users are limited to just 5 daily scans per feature - upgrade now for 10x more usage!
+                  Your premium subscription helps us improve the app and add new features. Thank you for supporting independent app development!
                 </Text>
-                <View style={styles.scarcityTimer}>
-                  <Text style={styles.timerText}>⏰ Offer expires in 23:45:12</Text>
-                </View>
               </LinearGradient>
             </View>
           </>

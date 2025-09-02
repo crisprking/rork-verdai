@@ -12,7 +12,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { MessageCircle, Sparkles, Leaf, Send, RefreshCw, Crown, Zap } from 'lucide-react-native';
+import { MessageCircle, Sparkles, Leaf, Send, RefreshCw, Crown } from 'lucide-react-native';
 import { useMutation } from '@tanstack/react-query';
 import { callGeminiAI } from '@/constants/api';
 import Colors from '@/constants/colors';
@@ -40,7 +40,7 @@ export default function HomeScreen() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: `Welcome to Verdai, ${user?.name || 'distinguished botanist'}! I’m your dedicated horticultural advisor, ready to elevate your plant care journey with precise, elegant guidance. From rare orchids to resilient succulents, I’ll tailor insights to your collection. What would you like to explore today?`,
+      text: `Hi ${user?.name || 'there'}! I'm your plant care companion. I can help you identify plants, diagnose health issues, and provide personalized care advice. What can I help you with today?`,
       isUser: false,
       timestamp: new Date(),
     },
@@ -54,7 +54,7 @@ export default function HomeScreen() {
       const messages: CoreMessage[] = [
         {
           role: 'system' as const,
-          content: 'You are Verdai, an advanced botanical intelligence system combining horticultural expertise with scientific precision. Provide comprehensive, research-backed plant guidance with specific care protocols, environmental optimization strategies, and preventive health measures. Reference botanical nomenclature when appropriate, suggest advanced techniques for plant health optimization, and provide insights into plant physiology and growth patterns. Maintain a sophisticated, professional tone befitting a premium botanical consultancy.'
+          content: 'You are a helpful plant care assistant. Provide clear, practical advice about plant care, identification, and health. Keep responses friendly and easy to understand. Focus on actionable tips that work for everyday plant owners.'
         },
         {
           role: 'user' as const,
@@ -123,12 +123,12 @@ export default function HomeScreen() {
   }, [inputText, sendMessageMutation, canUseFeature]);
 
   const quickQuestions = [
-    "Optimize my rare specimen collection strategy",
-    "Develop advanced propagation protocols",
-    "Design biophilic architectural integration",
-    "Create precision nutrient management systems",
-    "Establish microclimate optimization zones",
-    "Implement integrated pest management protocols"
+    "How often should I water my houseplants?",
+    "Why are my plant's leaves turning yellow?",
+    "What's the best light for indoor plants?",
+    "How do I know if my plant is healthy?",
+    "When should I repot my plants?",
+    "How to prevent common plant pests?"
   ];
 
   return (
@@ -149,8 +149,8 @@ export default function HomeScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.8)" size={16} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>Verdai</Text>
-          <Text style={styles.headerSubtitle}>Advanced Botanical Consultancy Platform</Text>
+          <Text style={styles.headerTitle}>Botanica</Text>
+          <Text style={styles.headerSubtitle}>Your Personal Plant Care Companion</Text>
           {isPremium ? (
             <View style={styles.premiumBadge}>
               <Crown color={Colors.light.luxuryGold} size={14} />
@@ -224,7 +224,7 @@ export default function HomeScreen() {
             <View style={[styles.messageBubble, styles.aiBubble]}>
               <View style={styles.loadingContainer}>
                 <ActivityIndicator color={Colors.light.luxuryPrimary} size="small" />
-                <Text style={styles.loadingText}>Processing through botanical neural networks...</Text>
+                <Text style={styles.loadingText}>Thinking...</Text>
               </View>
             </View>
           </View>
@@ -234,7 +234,7 @@ export default function HomeScreen() {
       <View style={styles.inputSection}>
         {messages.length === 1 && (
           <View style={styles.quickQuestionsContainer}>
-            <Text style={styles.quickQuestionsTitle}>Popular Inquiries</Text>
+            <Text style={styles.quickQuestionsTitle}>Quick Questions</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.quickQuestions}>
               {quickQuestions.map((question, index) => (
                 <TouchableOpacity
@@ -272,7 +272,7 @@ export default function HomeScreen() {
               style={styles.textInput}
               value={inputText}
               onChangeText={setInputText}
-              placeholder="Describe your horticultural challenge or botanical inquiry..."
+              placeholder="Ask me about plant care, identification, or health..."
               placeholderTextColor={Colors.light.luxuryTextSecondary}
               multiline
               maxLength={300}
@@ -306,7 +306,7 @@ export default function HomeScreen() {
           setShowUsageModal(false);
           router.push('/(tabs)/premium');
         }}
-        title="Chat Limit Reached"
+        title="Daily Chat Limit Reached"
         message={getUpgradeMessage()}
         remainingTime={getRemainingTime()}
         currentUsage={usage && usage.chatCount !== undefined && usage.chatLimit ? {
