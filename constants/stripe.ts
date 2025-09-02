@@ -90,13 +90,13 @@ export async function startCheckout(plan: PlanId, email?: string): Promise<strin
     // Enhanced URL scheme handling for iOS App Store compliance
     const getBaseUrl = () => {
       if (Platform.OS === 'web') {
-        return typeof window !== 'undefined' ? window.location.origin : 'https://plantai.app';
+        return typeof window !== 'undefined' ? window.location.origin : 'https://plantcoach.app';
       }
       // For iOS, use universal links for better App Store compliance
       return Platform.select({
-        ios: 'https://plantai.app', // Universal links for iOS
-        android: 'https://plantai.app', // Deep links for Android
-        default: 'https://plantai.app'
+        ios: 'https://plantcoach.app', // Universal links for iOS
+        android: 'https://plantcoach.app', // Deep links for Android
+        default: 'https://plantcoach.app'
       });
     };
     
@@ -122,9 +122,9 @@ export async function startCheckout(plan: PlanId, email?: string): Promise<strin
         user_email: email || 'anonymous',
         checkout_timestamp: new Date().toISOString(),
         app_bundle_id: Platform.select({
-          ios: 'com.plantai.premium',
-          android: 'com.plantai.premium',
-          default: 'com.plantai.premium'
+          ios: 'com.plantcoach.premium',
+          android: 'com.plantcoach.premium',
+          default: 'com.plantcoach.premium'
         }),
         revenue_optimization: 'v2',
         pricing_strategy: 'premium_positioning',
@@ -165,7 +165,7 @@ export async function startCheckout(plan: PlanId, email?: string): Promise<strin
       
       // For mobile, use the production API endpoint
       // In production, replace with your actual domain
-      const productionDomain = 'https://plantai.app';
+      const productionDomain = 'https://plantcoach.app';
       return `${productionDomain}/api/payments/checkout`;
     };
     
@@ -177,18 +177,18 @@ export async function startCheckout(plan: PlanId, email?: string): Promise<strin
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'X-Requested-With': 'PlantAI-Mobile',
+        'X-Requested-With': 'PlantCoach-Mobile',
         'User-Agent': Platform.select({
-          ios: `PlantAI-iOS/1.0.0 (${Platform.Version})`,
-          android: `PlantAI-Android/1.0.0 (API ${Platform.Version})`,
-          web: 'PlantAI-Web/1.0.0',
-          default: 'PlantAI/1.0.0'
-        }) || 'PlantAI/1.0.0',
+          ios: `PlantCoach-iOS/1.0.0 (${Platform.Version})`,
+          android: `PlantCoach-Android/1.0.0 (API ${Platform.Version})`,
+          web: 'PlantCoach-Web/1.0.0',
+          default: 'PlantCoach/1.0.0'
+        }) || 'PlantCoach/1.0.0',
       };
       
       // Add iOS-specific headers for App Store compliance
       if (Platform.OS === 'ios') {
-        headers['X-iOS-Bundle-Identifier'] = 'com.plantai.premium';
+        headers['X-iOS-Bundle-Identifier'] = 'com.plantcoach.premium';
         headers['X-iOS-Version'] = Platform.Version.toString();
       }
       
@@ -317,8 +317,8 @@ export function validateStripeConfig(): { isValid: boolean; errors: string[] } {
   // Platform-specific validations
   if (Platform.OS === 'ios') {
     // iOS App Store specific validations
-    const bundleId = 'com.plantai.premium';
-    if (!bundleId.includes('plantai')) {
+    const bundleId = 'com.plantcoach.premium';
+    if (!bundleId.includes('plantcoach')) {
       errors.push('Bundle ID should contain app identifier for App Store compliance');
     }
   }

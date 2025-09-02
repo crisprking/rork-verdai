@@ -58,7 +58,7 @@ export default function AuthScreen() {
       if (success) {
         Alert.alert(
           'Success!', 
-          isLogin ? 'Welcome back to PlantAI!' : 'Welcome to PlantAI! Your account has been created.',
+          isLogin ? 'Welcome back to PlantCoach!' : 'Welcome to PlantCoach! Your account has been created.',
           [{ text: 'Continue', onPress: () => router.replace('/(tabs)') }]
         );
       } else {
@@ -100,7 +100,7 @@ export default function AuthScreen() {
           <View style={styles.logoContainer}>
             <Leaf color={Colors.light.luxuryCard} size={32} />
           </View>
-          <Text style={styles.title}>PlantAI</Text>
+          <Text style={styles.title}>PlantCoach</Text>
           <Text style={styles.subtitle}>
             {isLogin ? 'Welcome back to your plant journey' : 'Start your plant care journey'}
           </Text>

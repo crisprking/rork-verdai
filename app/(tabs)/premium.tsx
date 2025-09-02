@@ -31,7 +31,7 @@ export default function PremiumScreen() {
       console.log('[Premium] Payment successful, activating premium');
       setPremium(true);
       Alert.alert(
-        '🌿 Welcome to VerdAI Premium!',
+        '🌿 Welcome to PlantCoach Premium!',
         'Your botanical intelligence has been elevated. Enjoy enhanced access to our premium features.',
         [{ text: 'Continue', style: 'default' }]
       );
@@ -535,7 +535,7 @@ export default function PremiumScreen() {
                     </View>
                   </View>
                   <Text style={styles.testimonialText}>
-                    "VerdAI's diagnostic accuracy rivals professional botanical analysis. It's revolutionized how I approach plant health assessment."
+                    "PlantCoach's diagnostic accuracy rivals professional botanical analysis. It's revolutionized how I approach plant health assessment."
                   </Text>
                 </View>
                 

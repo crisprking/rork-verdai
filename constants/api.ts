@@ -109,8 +109,8 @@ export const callGeminiAI = async (messages: CoreMessage[], imageData?: string):
         headers: { 
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'User-Agent': 'PlantAI/1.0.0',
-          'X-Request-ID': `plantai-${Date.now()}-${attempt}`,
+          'User-Agent': 'PlantCoach/1.0.0',
+          'X-Request-ID': `plantcoach-${Date.now()}-${attempt}`,
           'Cache-Control': 'no-cache',
         },
         body: requestPayload,
