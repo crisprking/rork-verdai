@@ -31,7 +31,7 @@ export default function PremiumScreen() {
       console.log('[Premium] Payment successful, activating premium');
       setPremium(true);
       Alert.alert(
-        '🌿 Welcome to PlantCoach Premium!',
+        '🌿 Welcome to Botanica Premium!',
         'Your botanical intelligence has been elevated. Enjoy enhanced access to our premium features.',
         [{ text: 'Continue', style: 'default' }]
       );
@@ -535,7 +535,7 @@ export default function PremiumScreen() {
                     </View>
                   </View>
                   <Text style={styles.testimonialText}>
-                    "PlantCoach's diagnostic accuracy rivals professional botanical analysis. It's revolutionized how I approach plant health assessment."
+                    "Botanica's diagnostic accuracy rivals professional botanical analysis. It's revolutionized how I approach plant health assessment."
                   </Text>
                 </View>
                 
