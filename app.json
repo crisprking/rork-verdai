@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.plantmd.aidoctor",
+      "bundleIdentifier": "app.rork.verdai",
       "buildNumber": "1.0.5",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "PlantMD needs photo access to analyze your plant images for health diagnosis",
