@@ -1,34 +1,34 @@
 {
   "expo": {
     "name": "PlantMD - AI Plant Doctor",
-    "slug": "verdai",
+    "slug": "plantmd-ai-plant-doctor",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "plantmd",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#2ECC71"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "1.0.4",
+      "bundleIdentifier": "com.plantmd.aidoctor",
+      "buildNumber": "1.0.5",
       "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos",
-        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera",
-        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone"
+        "NSPhotoLibraryUsageDescription": "PlantMD needs photo access to analyze your plant images for health diagnosis",
+        "NSCameraUsageDescription": "PlantMD uses your camera to capture plant photos for AI-powered health analysis",
+        "NSMicrophoneUsageDescription": "PlantMD may use microphone for voice notes about plant care"
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#2ECC71"
       },
-      "package": "app.rork.verdai",
+      "package": "com.plantmd.aidoctor",
       "permissions": [
         "CAMERA",
         "READ_EXTERNAL_STORAGE",
@@ -43,13 +43,13 @@
       [
         "expo-router",
         {
-          "origin": "https://rork.com/"
+          "origin": "https://plantmd.app/"
         }
       ],
       [
         "expo-image-picker",
         {
-          "photosPermission": "The app accesses your photos to let you share them with your friends."
+          "photosPermission": "PlantMD analyzes your plant photos to provide AI-powered health diagnostics and care recommendations."
         }
       ]
     ],
