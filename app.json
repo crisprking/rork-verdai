@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Botanica Pro: Plant Care AI",
-    "slug": "plantmd-ai-plant-doctor",
+    "slug": "botanica-plant-care-ai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
