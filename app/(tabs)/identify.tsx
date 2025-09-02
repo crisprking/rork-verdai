@@ -59,11 +59,11 @@ export default function IdentifyScreen() {
         const messages: CoreMessage[] = [
           {
             role: 'system' as const,
-            content: 'You are a plant identification expert. Focus on common plants worldwide. Respond with: Plant: [common name], Scientific: [scientific name], Care: [brief care tips], Confidence: [0-100]%. Keep responses structured and informative.',
+            content: 'You are Verdai, an advanced botanical taxonomist with expertise in plant morphology, phylogenetics, and horticultural science. Analyze plant specimens using detailed morphological characteristics, leaf patterns, growth habits, and botanical features. Provide: Species: [scientific binomial], Common: [vernacular names], Family: [taxonomic family], Origin: [native habitat], Cultivation: [advanced care protocols], Propagation: [reproduction methods], Confidence: [0-100]%. Include subspecies or cultivar information when identifiable.',
           },
           {
             role: 'user' as const,
-            content: 'Please identify this plant and provide care information.',
+            content: 'Please conduct a comprehensive botanical analysis of this specimen, including taxonomic classification, morphological assessment, and advanced cultivation requirements.',
           },
         ];
 
@@ -208,8 +208,8 @@ export default function IdentifyScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.6)" size={16} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>Plant Identifier</Text>
-          <Text style={styles.headerSubtitle}>Discover nature's secrets with AI precision</Text>
+          <Text style={styles.headerTitle}>Botanical Analysis</Text>
+          <Text style={styles.headerSubtitle}>Advanced taxonomic identification & morphological assessment</Text>
           {usage && usage.tier !== 'premium' && (
             <View style={styles.limitIndicator}>
               <Text style={styles.limitText}>{usage.remaining} identifications remaining</Text>
@@ -241,9 +241,9 @@ export default function IdentifyScreen() {
                   <Sparkles color={Colors.light.luxuryGold} size={20} />
                 </View>
               </View>
-              <Text style={styles.uploadText}>Capture Plant Beauty</Text>
+              <Text style={styles.uploadText}>Specimen Documentation</Text>
               <Text style={styles.uploadSubtext}>
-                Position your plant in good lighting for best results
+                Capture detailed botanical features for comprehensive taxonomic analysis
               </Text>
             </View>
 
@@ -258,7 +258,7 @@ export default function IdentifyScreen() {
                   style={styles.buttonGradient}
                 >
                   <Camera color="#FFFFFF" size={20} strokeWidth={2} />
-                  <Text style={styles.primaryButtonText}>Capture Photo</Text>
+                  <Text style={styles.primaryButtonText}>Document Specimen</Text>
                 </LinearGradient>
               </TouchableOpacity>
 
@@ -268,7 +268,7 @@ export default function IdentifyScreen() {
                 onPress={() => pickImage(false)}
               >
                 <ImageIcon color={Colors.light.luxuryPrimary} size={20} strokeWidth={2} />
-                <Text style={styles.secondaryButtonText}>Choose from Gallery</Text>
+                <Text style={styles.secondaryButtonText}>Upload Botanical Image</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -309,12 +309,12 @@ export default function IdentifyScreen() {
                   {identifyMutation.isPending ? (
                     <View style={styles.loadingContainer}>
                       <ActivityIndicator color="#FFFFFF" size="small" />
-                      <Text style={styles.loadingText}>Analyzing with AI...</Text>
+                      <Text style={styles.loadingText}>Processing taxonomic analysis...</Text>
                     </View>
                   ) : (
                     <>
                       <Sparkles color="#FFFFFF" size={20} strokeWidth={2} />
-                      <Text style={styles.identifyButtonText}>Identify Plant</Text>
+                      <Text style={styles.identifyButtonText}>Analyze Specimen</Text>
                     </>
                   )}
                 </LinearGradient>
@@ -325,7 +325,7 @@ export default function IdentifyScreen() {
 
         {result && (
           <View style={styles.resultSection}>
-            <Text style={styles.resultTitle}>Identification Result</Text>
+            <Text style={styles.resultTitle}>Botanical Analysis Report</Text>
 
             <View style={styles.resultCard}>
               <View style={styles.resultHeader}>
@@ -357,7 +357,7 @@ export default function IdentifyScreen() {
                   onPress={identifyPlant}
                 >
                   <RefreshCw color={Colors.light.luxuryPrimary} size={16} strokeWidth={2} />
-                  <Text style={styles.retryResultText}>Enhance Analysis</Text>
+                  <Text style={styles.retryResultText}>Refine Taxonomic Assessment</Text>
                 </TouchableOpacity>
               )}
             </View>

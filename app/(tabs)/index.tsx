@@ -40,7 +40,7 @@ export default function HomeScreen() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: `Welcome to VerdAI, ${user?.name || 'plant enthusiast'}! I’m your dedicated botanical companion, ready to elevate your plant care journey with precise, elegant guidance. From rare orchids to resilient succulents, I’ll tailor insights to your collection. What would you like to explore today?`,
+      text: `Welcome to Verdai, ${user?.name || 'distinguished botanist'}! I’m your dedicated horticultural advisor, ready to elevate your plant care journey with precise, elegant guidance. From rare orchids to resilient succulents, I’ll tailor insights to your collection. What would you like to explore today?`,
       isUser: false,
       timestamp: new Date(),
     },
@@ -54,7 +54,7 @@ export default function HomeScreen() {
       const messages: CoreMessage[] = [
         {
           role: 'system' as const,
-          content: 'You are VerdAI, a distinctive botanical expert. Deliver precise, evidence-based guidance in under 120 words with clear steps and safety notes. Avoid sensational claims and marketing language. If unsure, ask for a sharper photo or details (light, watering, soil). Keep a calm, professional tone.'
+          content: 'You are Verdai, an advanced botanical intelligence system combining horticultural expertise with scientific precision. Provide comprehensive, research-backed plant guidance with specific care protocols, environmental optimization strategies, and preventive health measures. Reference botanical nomenclature when appropriate, suggest advanced techniques for plant health optimization, and provide insights into plant physiology and growth patterns. Maintain a sophisticated, professional tone befitting a premium botanical consultancy.'
         },
         {
           role: 'user' as const,
@@ -123,10 +123,12 @@ export default function HomeScreen() {
   }, [inputText, sendMessageMutation, canUseFeature]);
 
   const quickQuestions = [
-    "Curate rare plants for my collection",
-    "Diagnose my orchid's health issues",
-    "Design a luxury indoor garden",
-    "Premium fertilization schedule",
+    "Optimize my rare specimen collection strategy",
+    "Develop advanced propagation protocols",
+    "Design biophilic architectural integration",
+    "Create precision nutrient management systems",
+    "Establish microclimate optimization zones",
+    "Implement integrated pest management protocols"
   ];
 
   return (
@@ -147,8 +149,8 @@ export default function HomeScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.8)" size={16} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>VerdAI</Text>
-          <Text style={styles.headerSubtitle}>Sophisticated botanical intelligence</Text>
+          <Text style={styles.headerTitle}>Verdai</Text>
+          <Text style={styles.headerSubtitle}>Advanced Botanical Consultancy Platform</Text>
           {isPremium ? (
             <View style={styles.premiumBadge}>
               <Crown color={Colors.light.luxuryGold} size={14} />
@@ -222,7 +224,7 @@ export default function HomeScreen() {
             <View style={[styles.messageBubble, styles.aiBubble]}>
               <View style={styles.loadingContainer}>
                 <ActivityIndicator color={Colors.light.luxuryPrimary} size="small" />
-                <Text style={styles.loadingText}>Analyzing with botanical intelligence...</Text>
+                <Text style={styles.loadingText}>Processing through botanical neural networks...</Text>
               </View>
             </View>
           </View>
@@ -270,7 +272,7 @@ export default function HomeScreen() {
               style={styles.textInput}
               value={inputText}
               onChangeText={setInputText}
-              placeholder="Share your botanical curiosity..."
+              placeholder="Describe your horticultural challenge or botanical inquiry..."
               placeholderTextColor={Colors.light.luxuryTextSecondary}
               multiline
               maxLength={300}
