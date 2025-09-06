@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FloraMind: AI Plants",
-    "slug": "floramind-ai-plant-intelligence",
+    "slug": "floramind",
     "version": "1.0.0",
     "description": "FloraMind revolutionizes plant care with advanced AI intelligence, instant species identification, health diagnosis, and personalized care recommendations. The most sophisticated plant care app powered by machine learning.",
     "orientation": "portrait",
@@ -61,7 +61,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "floramind-ai-plants-2024"
+        "projectId": "floramind"
       }
     },
     "inAppPurchases": [
