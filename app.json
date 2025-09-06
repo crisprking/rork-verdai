@@ -1,40 +1,33 @@
 {
   "expo": {
-    "name": "Botanica Pro: Plant Care AI",
-    "slug": "botanica-plant-care-ai",
+    "name": "FloraMind: AI Plant Intelligence",
+    "slug": "floramind-ai-plant-intelligence",
     "version": "1.0.0",
     "orientation": "portrait",
+    "platforms": ["ios"],
     "icon": "./assets/images/icon.png",
-    "scheme": "plantmd",
+    "scheme": "floramind",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#2ECC71"
+      "backgroundColor": "#1B5E20"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "1.0.5",
+      "supportsTablet": false,
+      "bundleIdentifier": "com.floramind.aiplants",
+      "buildNumber": "1.0.0",
       "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "PlantMD needs photo access to analyze your plant images for health diagnosis",
-        "NSCameraUsageDescription": "PlantMD uses your camera to capture plant photos for AI-powered health analysis",
-        "NSMicrophoneUsageDescription": "PlantMD may use microphone for voice notes about plant care"
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIDeviceFamily": [1],
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": ["en"],
+        "NSPhotoLibraryUsageDescription": "FloraMind needs photo access to analyze your plants using advanced AI intelligence for health diagnosis and care recommendations",
+        "NSCameraUsageDescription": "FloraMind uses your camera to capture plant photos for AI-powered health analysis, species identification, and personalized care insights",
+        "NSMicrophoneUsageDescription": "FloraMind may use microphone for voice notes about your plant care observations and AI-powered plant intelligence features",
+        "NSLocationWhenInUseUsageDescription": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment"
       }
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#2ECC71"
-      },
-      "package": "com.plantmd.aidoctor",
-      "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "INTERNET"
-      ]
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
@@ -43,18 +36,37 @@
       [
         "expo-router",
         {
-          "origin": "https://plantmd.app/"
+          "origin": "https://floramind.app/"
         }
       ],
       [
         "expo-image-picker",
         {
-          "photosPermission": "PlantMD analyzes your plant photos to provide AI-powered health diagnostics and care recommendations."
+          "photosPermission": "FloraMind analyzes your plant photos using advanced AI intelligence to provide health diagnostics, species identification, and personalized care recommendations."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment and growing conditions."
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "floramind-ai-plants-2024"
+      }
+    },
+    "inAppPurchases": [
+      "com.floramind.premium.monthly",
+      "com.floramind.premium.annual",
+      "com.floramind.ai.identification.pack",
+      "com.floramind.advanced.analytics",
+      "com.floramind.carbon.tracking.pro",
+      "com.floramind.community.insights"
+    ]
   }
 }
