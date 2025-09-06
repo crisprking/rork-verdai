@@ -1,4 +1,4 @@
-# FloraMind: AI Plant Intelligence
+# FloraMind: AI Plants
 
 **The most advanced AI-powered plant care assistant that combines machine learning, environmental consciousness, and community insights to revolutionize how you care for your plants.**
 

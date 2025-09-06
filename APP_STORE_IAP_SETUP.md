@@ -1,4 +1,4 @@
-# FloraMind: App Store In-App Purchase Setup Guide
+# FloraMind: AI Plants - App Store IAP Setup Guide
 
 ## 📱 **App Store Connect Configuration**
 
