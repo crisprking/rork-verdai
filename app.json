@@ -3,6 +3,7 @@
     "name": "FloraMind: AI Plants",
     "slug": "floramind-ai-plant-intelligence",
     "version": "1.0.0",
+    "description": "FloraMind revolutionizes plant care with advanced AI intelligence, instant species identification, health diagnosis, and personalized care recommendations. The most sophisticated plant care app powered by machine learning.",
     "orientation": "portrait",
     "platforms": ["ios"],
     "icon": "./assets/images/icon.png",
@@ -26,7 +27,10 @@
         "NSPhotoLibraryUsageDescription": "FloraMind needs photo access to analyze your plants using advanced AI intelligence for health diagnosis and care recommendations",
         "NSCameraUsageDescription": "FloraMind uses your camera to capture plant photos for AI-powered health analysis, species identification, and personalized care insights",
         "NSMicrophoneUsageDescription": "FloraMind may use microphone for voice notes about your plant care observations and AI-powered plant intelligence features",
-        "NSLocationWhenInUseUsageDescription": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment"
+        "NSLocationWhenInUseUsageDescription": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment",
+        "NSUserTrackingUsageDescription": "FloraMind uses tracking to provide personalized plant care recommendations and improve AI accuracy",
+        "NSCalendarsUsageDescription": "FloraMind can create plant care reminders in your calendar for optimal care scheduling",
+        "NSContactsUsageDescription": "FloraMind can share plant care insights with friends and family through your contacts"
       }
     },
     "web": {

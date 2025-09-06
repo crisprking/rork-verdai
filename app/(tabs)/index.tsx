@@ -123,12 +123,12 @@ export default function HomeScreen() {
   }, [inputText, sendMessageMutation, canUseFeature]);
 
   const quickQuestions = [
-    "Identify this plant species from photo",
-    "Why are my plant's leaves turning yellow?",
-    "Predict my plant's growth pattern",
-    "What's the optimal care schedule?",
-    "Diagnose plant health issues",
-    "AI-powered care recommendations"
+    "🔍 Identify this plant species",
+    "🏥 Diagnose plant health issues", 
+    "📈 Predict growth patterns",
+    "⚡ Optimize care schedule",
+    "🌱 Carbon footprint analysis",
+    "🤖 AI care recommendations"
   ];
 
   return (
