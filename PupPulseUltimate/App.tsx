@@ -128,26 +128,11 @@ export default function App() {
   const [showPaymentScreen, setShowPaymentScreen] = useState(false);
   const [userProfile, setUserProfile] = useState<Profile | null>(null);
 
-  // BREAKTHROUGH FEATURES STATE
-  const [showAIPredictions, setShowAIPredictions] = useState(false);
+  // Health features state
+  const [showHealthTracking, setShowHealthTracking] = useState(false);
   const [showCommunity, setShowCommunity] = useState(false);
   const [showEmergencyMode, setShowEmergencyMode] = useState(false);
-  const [showBiometricScan, setShowBiometricScan] = useState(false);
-  const [showSocialFeatures, setShowSocialFeatures] = useState(false);
-  const [showGeneticAnalysis, setShowGeneticAnalysis] = useState(false);
-  const [showBehavioralAI, setShowBehavioralAI] = useState(false);
-  const [showCostSavings, setShowCostSavings] = useState(false);
-  const [showLifeExpectancy, setShowLifeExpectancy] = useState(false);
-  const [showPreventiveCare, setShowPreventiveCare] = useState(false);
-  const [showInsuranceIntegration, setShowInsuranceIntegration] = useState(false);
-  const [showVetConnect, setShowVetConnect] = useState(false);
-  const [showPetSitter, setShowPetSitter] = useState(false);
-  const [showTrainingAI, setShowTrainingAI] = useState(false);
-  const [showNutritionAI, setShowNutritionAI] = useState(false);
-  const [showExerciseAI, setShowExerciseAI] = useState(false);
-  const [showSleepAnalysis, setShowSleepAnalysis] = useState(false);
-  const [showStressMonitoring, setShowStressMonitoring] = useState(false);
-  const [showSocialLearning, setShowSocialLearning] = useState(false);
+  const [showBreedInfo, setShowBreedInfo] = useState(false);
 
   const scrollViewRef = useRef<ScrollView>(null);
 
@@ -640,6 +625,24 @@ export default function App() {
     pulseAnimationEffect();
   };
 
+  const handleHealthTracking = () => {
+    if (Platform.OS === "ios") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    setShowHealthTracking(true);
+    addXP(10);
+    pulseAnimationEffect();
+  };
+
+  const handleBreedInfo = () => {
+    if (Platform.OS === "ios") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    setShowBreedInfo(true);
+    addXP(8);
+    pulseAnimationEffect();
+  };
+
   if (!currentDog) {
     return (
       <LinearGradient colors={["#4CAF50", "#2E7D32"]} style={styles.container}>
@@ -801,7 +804,7 @@ export default function App() {
           <View style={styles.breakthroughGrid}>
             <TouchableOpacity
               style={[styles.breakthroughCard, styles.predictionCard]}
-              onPress={() => setShowAIPredictions(true)}
+              onPress={() => setShowHealthTracking(true)}
             >
               <MaterialIcons name="trending-up" size={32} color="#4CAF50" />
               <Text style={styles.breakthroughCardTitle}>Health Tracking</Text>
@@ -811,7 +814,7 @@ export default function App() {
 
             <TouchableOpacity
               style={[styles.breakthroughCard, styles.geneticCard]}
-              onPress={() => setShowGeneticAnalysis(true)}
+              onPress={() => setShowBreedInfo(true)}
             >
               <MaterialIcons name="pets" size={32} color="#4CAF50" />
               <Text style={styles.breakthroughCardTitle}>Breed Info</Text>
@@ -1006,6 +1009,54 @@ export default function App() {
           setShowPaymentScreen(false);
         }}
       />
+
+      {/* Health Tracking Modal */}
+      {showHealthTracking && (
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Health Tracking</Text>
+              <TouchableOpacity onPress={() => setShowHealthTracking(false)}>
+                <MaterialIcons name="close" size={24} color="#666" />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.modalText}>
+              Track your dog's health metrics including weight, activity levels, 
+              eating patterns, and behavior changes over time.
+            </Text>
+            <TouchableOpacity 
+              style={styles.modalButton}
+              onPress={() => setShowHealthTracking(false)}
+            >
+              <Text style={styles.modalButtonText}>Got it</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+
+      {/* Breed Info Modal */}
+      {showBreedInfo && (
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Breed Information</Text>
+              <TouchableOpacity onPress={() => setShowBreedInfo(false)}>
+                <MaterialIcons name="close" size={24} color="#666" />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.modalText}>
+              Learn about Golden Retriever-specific health needs, exercise requirements, 
+              common health issues, and care recommendations.
+            </Text>
+            <TouchableOpacity 
+              style={styles.modalButton}
+              onPress={() => setShowBreedInfo(false)}
+            >
+              <Text style={styles.modalButtonText}>Learn More</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
 
       <StatusBar style="light" />
     </SafeAreaView>
@@ -1599,5 +1650,58 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 4,
     textAlign: "center",
+  },
+  // Modal styles
+  modalOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1000,
+  },
+  modalContent: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 16,
+    padding: 20,
+    margin: 20,
+    maxWidth: 350,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  modalText: {
+    fontSize: 16,
+    color: "#666",
+    lineHeight: 24,
+    marginBottom: 20,
+  },
+  modalButton: {
+    backgroundColor: "#4CAF50",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  modalButtonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
