@@ -1,76 +1,73 @@
 {
   "expo": {
-    "name": "FloraMind: AI Plants",
-    "slug": "floramind",
+    "name": "PupPulse: AI Dog Health",
+    "slug": "puppulse-ai-dog-health",
     "version": "1.0.0",
-    "description": "FloraMind revolutionizes plant care with advanced AI intelligence, instant species identification, health diagnosis, and personalized care recommendations. The most sophisticated plant care app powered by machine learning.",
     "orientation": "portrait",
-    "platforms": ["ios"],
-    "icon": "./assets/images/icon.png",
-    "scheme": "floramind",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "icon": "./PupPulseUltimate/assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./PupPulseUltimate/assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#1B5E20"
+      "backgroundColor": "#4CAF50"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.abrahamtrueba9898.puppulse",
+      "buildNumber": "1",
       "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Access photos to analyze your dog's health symptoms and track wellness",
+        "NSCameraUsageDescription": "Take photos for AI-powered dog health analysis and symptom checking",
+        "NSMicrophoneUsageDescription": "Record audio for veterinary consultations and health monitoring",
+        "NSLocationWhenInUseUsageDescription": "Find nearby veterinary clinics and emergency services for your dog",
         "ITSAppUsesNonExemptEncryption": false,
-        "UIDeviceFamily": [1],
         "CFBundleAllowMixedLocalizations": true,
-        "CFBundleLocalizations": ["en"],
-        "NSPhotoLibraryUsageDescription": "FloraMind needs photo access to analyze your plants using advanced AI intelligence for health diagnosis and care recommendations",
-        "NSCameraUsageDescription": "FloraMind uses your camera to capture plant photos for AI-powered health analysis, species identification, and personalized care insights",
-        "NSMicrophoneUsageDescription": "FloraMind may use microphone for voice notes about your plant care observations and AI-powered plant intelligence features",
-        "NSLocationWhenInUseUsageDescription": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment",
-        "NSUserTrackingUsageDescription": "FloraMind uses tracking to provide personalized plant care recommendations and improve AI accuracy",
-        "NSCalendarsUsageDescription": "FloraMind can create plant care reminders in your calendar for optimal care scheduling",
-        "NSContactsUsageDescription": "FloraMind can share plant care insights with friends and family through your contacts"
+        "CFBundleLocalizations": [
+          "en"
+        ],
+        "UIRequiredDeviceCapabilities": [
+          "armv7"
+        ],
+        "UIStatusBarStyle": "UIStatusBarStyleLightContent"
       }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./PupPulseUltimate/assets/adaptive-icon.png",
+        "backgroundColor": "#4CAF50"
+      },
+      "package": "com.abrahamtrueba9898.puppulse"
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./PupPulseUltimate/assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-router",
-        {
-          "origin": "https://floramind.app/"
-        }
-      ],
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "FloraMind analyzes your plant photos using advanced AI intelligence to provide health diagnostics, species identification, and personalized care recommendations."
-        }
-      ],
-      [
-        "expo-location",
-        {
-          "locationAlwaysAndWhenInUsePermission": "FloraMind uses your location to provide weather-based plant care recommendations and optimize AI plant intelligence for your local environment and growing conditions."
-        }
-      ]
+    "platforms": [
+      "ios"
     ],
-    "experiments": {
-      "typedRoutes": true
-    },
+    "scheme": "puppulse-doghealth",
+    "description": "AI-powered dog health companion for comprehensive pet wellness monitoring, symptom checking, and veterinary care coordination",
+    "keywords": [
+      "dog",
+      "health",
+      "AI",
+      "veterinary",
+      "pet",
+      "wellness",
+      "monitoring",
+      "care",
+      "puppy",
+      "canine"
+    ],
+    "privacy": "public",
+    "primaryColor": "#4CAF50",
+    "backgroundColor": "#F5F5F5",
     "extra": {
       "eas": {
-        "projectId": "61358af9-df6d-43db-b088-50ef6a100ddc"
+        "projectId": "c8cb52a8-61a1-43da-84ae-92feb36d5695"
       }
-    },
-    "inAppPurchases": [
-      "com.floramind.premium.monthly",
-      "com.floramind.premium.annual",
-      "com.floramind.ai.identification.pack",
-      "com.floramind.advanced.analytics",
-      "com.floramind.carbon.tracking.pro",
-      "com.floramind.community.insights"
-    ]
+    }
   }
 }
