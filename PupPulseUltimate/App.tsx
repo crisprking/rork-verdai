@@ -206,7 +206,7 @@ export default function App() {
       medicalConditions: [],
       medications: [],
       allergies: ["Chicken"],
-      // BREAKTHROUGH BIOMETRIC DATA
+      // Basic health tracking data
       biometricData: {
         heartRate: 85,
         temperature: 101.2,
@@ -224,7 +224,7 @@ export default function App() {
       },
       healthPredictions: {
         riskScore: 12, // Low risk (0-100 scale)
-        nextHealthIssue: "None predicted in next 6 months",
+        nextHealthIssue: "Regular check-up recommended",
         preventiveActions: ["Continue current exercise routine", "Monitor weight", "Regular dental care"],
         lifeExpectancy: 12.5
       },
@@ -268,88 +268,88 @@ export default function App() {
     const sampleInsights: AIInsight[] = [
       {
         id: "1",
-        type: "prediction",
-        title: "🚀 BREAKTHROUGH: AI Predicts Perfect Health Trajectory",
-        description: "Based on Buddy's biometric data and behavior patterns, our AI predicts he will maintain excellent health for the next 2+ years. Risk of major health issues: 3.2% (industry average: 15%).",
+        type: "health",
+        title: "Health Status: Excellent",
+        description: "Buddy is in great health! His recent activity levels and eating patterns show he's thriving. Keep up the good work with regular exercise and balanced nutrition.",
         priority: "low",
         timestamp: new Date(),
         actionable: true,
-        actionText: "View detailed health forecast",
-        confidence: 94,
-        source: "biometric",
-        urgency: "within_week",
-        costSavings: 2500,
-        lifeImpact: "major",
-        relatedDogs: ["Max (Labrador)", "Luna (Golden Retriever)"],
-        scientificBacking: "Journal of Veterinary Medicine, 2024"
-      },
-      {
-        id: "2",
-        type: "genetic",
-        title: "🧬 GENETIC INSIGHT: Golden Retriever Health Optimization",
-        description: "Buddy's genetic profile shows 23% higher risk for hip dysplasia. Our AI recommends specific exercises and supplements that can reduce this risk by 67%.",
-        priority: "high",
-        timestamp: new Date(),
-        actionable: true,
-        actionText: "Start preventive care plan",
-        confidence: 89,
-        source: "genetic",
-        urgency: "within_day",
-        costSavings: 1800,
-        lifeImpact: "major",
-        relatedDogs: ["Charlie (Golden Retriever)", "Bella (Golden Retriever)"],
-        scientificBacking: "Nature Genetics, 2023"
-      },
-      {
-        id: "3",
-        type: "emergency",
-        title: "⚠️ EMERGENCY ALERT: Stress Level Rising",
-        description: "Buddy's stress indicators have increased 40% in the last 2 hours. This could indicate pain, anxiety, or environmental stress. Immediate attention recommended.",
-        priority: "urgent",
-        timestamp: new Date(),
-        actionable: true,
-        actionText: "Check on Buddy now",
-        confidence: 92,
+        actionText: "Continue current routine",
+        confidence: 85,
         source: "behavioral",
-        urgency: "immediate",
-        costSavings: 500,
-        lifeImpact: "life_saving",
-        relatedDogs: ["Rocky (German Shepherd)", "Milo (Border Collie)"],
-        scientificBacking: "Veterinary Behavior Journal, 2024"
-      },
-      {
-        id: "4",
-        type: "social",
-        title: "🌟 COMMUNITY SUCCESS: Buddy's Training Method Works!",
-        description: "Your positive reinforcement technique for 'sit' command has been adopted by 47 other dog owners in your area, with 94% success rate. You're a community leader!",
-        priority: "low",
-        timestamp: new Date(),
-        actionable: true,
-        actionText: "Share more training tips",
-        confidence: 96,
-        source: "social",
         urgency: "within_week",
         costSavings: 0,
         lifeImpact: "minor",
-        relatedDogs: ["All community dogs"],
-        scientificBacking: "Applied Animal Behavior Science, 2024"
+        relatedDogs: [],
+        scientificBacking: "General veterinary guidelines"
       },
       {
-        id: "5",
-        type: "nutrition",
-        title: "🍖 NUTRITION AI: Optimal Feeding Schedule Detected",
-        description: "Our AI has analyzed Buddy's metabolism and activity patterns. Switching to 3 smaller meals instead of 2 large ones could improve his digestion by 23% and energy levels by 18%.",
+        id: "2",
+        type: "exercise",
+        title: "Exercise Recommendation",
+        description: "Consider adding 10 more minutes to your daily walks to maintain optimal fitness. Golden Retrievers benefit from 60-90 minutes of exercise daily.",
         priority: "medium",
         timestamp: new Date(),
         actionable: true,
-        actionText: "Update feeding schedule",
-        confidence: 87,
+        actionText: "Schedule longer walk",
+        confidence: 75,
         source: "behavioral",
         urgency: "within_day",
-        costSavings: 300,
+        costSavings: 0,
         lifeImpact: "moderate",
-        relatedDogs: ["Duke (Labrador)", "Sophie (Golden Retriever)"],
-        scientificBacking: "Journal of Animal Nutrition, 2024"
+        relatedDogs: [],
+        scientificBacking: "Breed-specific exercise guidelines"
+      },
+      {
+        id: "3",
+        type: "nutrition",
+        title: "Feeding Schedule Suggestion",
+        description: "Your current feeding schedule looks good. Consider splitting meals into 2-3 smaller portions to help with digestion and prevent bloat.",
+        priority: "low",
+        timestamp: new Date(),
+        actionable: true,
+        actionText: "Consider meal timing",
+        confidence: 70,
+        source: "behavioral",
+        urgency: "within_week",
+        costSavings: 0,
+        lifeImpact: "minor",
+        relatedDogs: [],
+        scientificBacking: "Canine nutrition best practices"
+      },
+      {
+        id: "4",
+        type: "behavior",
+        title: "Behavioral Observation",
+        description: "Buddy seems happy and well-adjusted. His social interactions and play behavior indicate good mental health. Continue providing enrichment activities.",
+        priority: "low",
+        timestamp: new Date(),
+        actionable: true,
+        actionText: "Keep up enrichment",
+        confidence: 80,
+        source: "behavioral",
+        urgency: "within_week",
+        costSavings: 0,
+        lifeImpact: "minor",
+        relatedDogs: [],
+        scientificBacking: "Canine behavior studies"
+      },
+      {
+        id: "5",
+        type: "health",
+        title: "Regular Check-up Reminder",
+        description: "Buddy's next vet appointment is in 30 days. This is a good time to discuss any concerns and ensure vaccinations are up to date.",
+        priority: "medium",
+        timestamp: new Date(),
+        actionable: true,
+        actionText: "Schedule vet visit",
+        confidence: 90,
+        source: "behavioral",
+        urgency: "within_week",
+        costSavings: 0,
+        lifeImpact: "moderate",
+        relatedDogs: [],
+        scientificBacking: "Preventive care guidelines"
       }
     ];
 
@@ -751,104 +751,82 @@ export default function App() {
 
         <View style={styles.quickActions}>
           <TouchableOpacity
-            style={[styles.actionButton, styles.breakthroughButton]}
+            style={[styles.actionButton, isPremium ? styles.premiumAction : {}]}
             onPress={() => {
-              setShowAIPredictions(true);
-              addXP(25);
+              handleSymptomChecker();
+              addXP(10);
               pulseAnimationEffect();
             }}
           >
-            <MaterialIcons name="psychology" size={24} color="#FF6B35" />
-            <Text style={styles.actionText}>AI Predict</Text>
-            <Text style={styles.actionXP}>+25 XP</Text>
-            <View style={styles.breakthroughBadge}>
-              <Text style={styles.breakthroughText}>NEW</Text>
-            </View>
+            <MaterialIcons name="medical-services" size={24} color="#4CAF50" />
+            <Text style={styles.actionText}>Health Check</Text>
+            <Text style={styles.actionXP}>+10 XP</Text>
+            {isPremium && <View style={styles.premiumDot} />}
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.actionButton, styles.breakthroughButton]}
-            onPress={() => {
-              setShowBiometricScan(true);
-              addXP(20);
-              pulseAnimationEffect();
-            }}
+            style={styles.actionButton}
+            onPress={handleLogEvent}
           >
-            <MaterialIcons name="biotech" size={24} color="#9C27B0" />
-            <Text style={styles.actionText}>Bio Scan</Text>
-            <Text style={styles.actionXP}>+20 XP</Text>
-            <View style={styles.breakthroughBadge}>
-              <Text style={styles.breakthroughText}>AI</Text>
-            </View>
+            <MaterialIcons name="add-circle" size={24} color="#4CAF50" />
+            <Text style={styles.actionText}>Log Event</Text>
+            <Text style={styles.actionXP}>+5 XP</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.actionButton, styles.breakthroughButton]}
-            onPress={() => {
-              setShowCommunity(true);
-              addXP(15);
-              pulseAnimationEffect();
-            }}
+            style={styles.actionButton}
+            onPress={handleSchedule}
           >
-            <MaterialIcons name="groups" size={24} color="#2196F3" />
-            <Text style={styles.actionText}>Community</Text>
+            <MaterialIcons name="schedule" size={24} color="#4CAF50" />
+            <Text style={styles.actionText}>Schedule</Text>
+            <Text style={styles.actionXP}>+8 XP</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.actionButton, isPremium ? styles.premiumAction : {}]}
+            onPress={handleVetChat}
+          >
+            <MaterialIcons name="videocam" size={24} color="#4CAF50" />
+            <Text style={styles.actionText}>Vet Chat</Text>
             <Text style={styles.actionXP}>+15 XP</Text>
-            <View style={styles.breakthroughBadge}>
-              <Text style={styles.breakthroughText}>SOCIAL</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.actionButton, styles.breakthroughButton]}
-            onPress={() => {
-              setShowEmergencyMode(true);
-              addXP(30);
-              pulseAnimationEffect();
-            }}
-          >
-            <MaterialIcons name="emergency" size={24} color="#F44336" />
-            <Text style={styles.actionText}>Emergency</Text>
-            <Text style={styles.actionXP}>+30 XP</Text>
-            <View style={styles.breakthroughBadge}>
-              <Text style={styles.breakthroughText}>LIFE-SAVING</Text>
-            </View>
+            {isPremium && <View style={styles.premiumDot} />}
           </TouchableOpacity>
         </View>
 
-        {/* BREAKTHROUGH FEATURES SECTION */}
+        {/* HEALTH FEATURES SECTION */}
         <View style={styles.breakthroughSection}>
-          <Text style={styles.breakthroughTitle}>🚀 BREAKTHROUGH FEATURES</Text>
-          <Text style={styles.breakthroughSubtitle}>Revolutionary AI that saves lives and money</Text>
+          <Text style={styles.breakthroughTitle}>Health Features</Text>
+          <Text style={styles.breakthroughSubtitle}>Tools to help you care for your dog</Text>
           
           <View style={styles.breakthroughGrid}>
             <TouchableOpacity
               style={[styles.breakthroughCard, styles.predictionCard]}
               onPress={() => setShowAIPredictions(true)}
             >
-              <MaterialIcons name="trending-up" size={32} color="#FF6B35" />
-              <Text style={styles.breakthroughCardTitle}>AI Health Predictions</Text>
-              <Text style={styles.breakthroughCardDesc}>Predict health issues 6 months in advance</Text>
-              <Text style={styles.breakthroughCardSavings}>Save $2,500+ annually</Text>
+              <MaterialIcons name="trending-up" size={32} color="#4CAF50" />
+              <Text style={styles.breakthroughCardTitle}>Health Tracking</Text>
+              <Text style={styles.breakthroughCardDesc}>Monitor your dog's health trends</Text>
+              <Text style={styles.breakthroughCardSavings}>Stay informed</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.breakthroughCard, styles.geneticCard]}
               onPress={() => setShowGeneticAnalysis(true)}
             >
-              <MaterialIcons name="science" size={32} color="#9C27B0" />
-              <Text style={styles.breakthroughCardTitle}>Genetic Analysis</Text>
-              <Text style={styles.breakthroughCardDesc}>DNA-based health optimization</Text>
-              <Text style={styles.breakthroughCardSavings}>Prevent 67% of breed issues</Text>
+              <MaterialIcons name="pets" size={32} color="#4CAF50" />
+              <Text style={styles.breakthroughCardTitle}>Breed Info</Text>
+              <Text style={styles.breakthroughCardDesc}>Learn about your dog's breed</Text>
+              <Text style={styles.breakthroughCardSavings}>Breed-specific care</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.breakthroughCard, styles.communityCard]}
               onPress={() => setShowCommunity(true)}
             >
-              <MaterialIcons name="groups" size={32} color="#2196F3" />
-              <Text style={styles.breakthroughCardTitle}>Smart Community</Text>
-              <Text style={styles.breakthroughCardDesc}>Learn from 10,000+ dog owners</Text>
-              <Text style={styles.breakthroughCardSavings}>94% success rate</Text>
+              <MaterialIcons name="groups" size={32} color="#4CAF50" />
+              <Text style={styles.breakthroughCardTitle}>Community</Text>
+              <Text style={styles.breakthroughCardDesc}>Connect with other dog owners</Text>
+              <Text style={styles.breakthroughCardSavings}>Share experiences</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -856,9 +834,9 @@ export default function App() {
               onPress={() => setShowEmergencyMode(true)}
             >
               <MaterialIcons name="emergency" size={32} color="#F44336" />
-              <Text style={styles.breakthroughCardTitle}>Emergency AI</Text>
-              <Text style={styles.breakthroughCardDesc}>Life-saving instant alerts</Text>
-              <Text style={styles.breakthroughCardSavings}>92% accuracy rate</Text>
+              <Text style={styles.breakthroughCardTitle}>Emergency</Text>
+              <Text style={styles.breakthroughCardDesc}>Quick access to emergency info</Text>
+              <Text style={styles.breakthroughCardSavings}>Be prepared</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -1557,7 +1535,7 @@ const styles = StyleSheet.create({
   breakthroughTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#FF6B35",
+    color: "#4CAF50",
     textAlign: "center",
     marginBottom: 8,
   },
@@ -1587,15 +1565,15 @@ const styles = StyleSheet.create({
   },
   predictionCard: {
     borderLeftWidth: 4,
-    borderLeftColor: "#FF6B35",
+    borderLeftColor: "#4CAF50",
   },
   geneticCard: {
     borderLeftWidth: 4,
-    borderLeftColor: "#9C27B0",
+    borderLeftColor: "#4CAF50",
   },
   communityCard: {
     borderLeftWidth: 4,
-    borderLeftColor: "#2196F3",
+    borderLeftColor: "#4CAF50",
   },
   emergencyCard: {
     borderLeftWidth: 4,
