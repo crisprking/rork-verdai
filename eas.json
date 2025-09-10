@@ -28,7 +28,6 @@
         "simulator": false,
         "enterpriseProvisioning": "universal",
         "credentialsSource": "remote",
-        "image": "latest"
       }
     },
     "simulator": {
