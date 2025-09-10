@@ -8,8 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:ios": "eas build --platform ios",
-    "build:android": "eas build --platform android",
-    "eas-build-pre-install": "./eas-build-pre-install.sh"
+    "build:android": "eas build --platform android"
   },
   "dependencies": {
     "expo": "~53.0.0",
