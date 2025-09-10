@@ -64,8 +64,11 @@
     "privacy": "public",
     "primaryColor": "#22C55E",
     "backgroundColor": "#F0FDF4",
+    "owner": "devdeving",
     "extra": {
-      "eas": {}
+      "eas": {
+        "projectId": "445c2162-e7bf-4597-9020-d5be9a04c173"
+      }
     }
   }
 }
