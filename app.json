@@ -1,59 +1,30 @@
 {
   "expo": {
-    "name": "FloraMind AI Plants",
-    "slug": "floramindfinalversion",
+    "name": "FloraMindSuccess",
+    "slug": "FloraMindSuccess",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#22C55E"
+      "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "21",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#22C55E"
+        "backgroundColor": "#ffffff"
       },
-      "package": "app.rork.verdai"
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "scheme": "floramindfinalversion",
-    "description": "AI-powered plant identification and care companion",
-    "keywords": [
-      "plants",
-      "identification",
-      "AI",
-      "botany",
-      "gardening"
-    ],
-    "privacy": "public",
-    "primaryColor": "#22C55E",
-    "backgroundColor": "#F0FDF4",
-    "owner": "devdeving99",
-    "extra": {
-      "eas": {
-        "projectId": "f7a884ca-71fb-49b5-93f6-45b11d573faa"
-      }
-    },
-    "sdkVersion": "53.0.0"
+    }
   }
 }
