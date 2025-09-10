@@ -16,6 +16,7 @@ import * as FileSystem from 'expo-file-system';
 import { Image } from 'expo-image';
 import { useMutation } from '@tanstack/react-query';
 import { callGeminiAI } from '@/constants/api';
+import { EnhancedAIService, PlantHealthDiagnosis } from '@/services/EnhancedAIService';
 import Colors from '@/constants/colors';
 import { useUser } from '@/hooks/useUser';
 import { useUsageControl } from '@/hooks/useUsageControl';
@@ -33,6 +34,13 @@ interface DiagnosisResult {
   solutions: string[];
   preventionTips: string[];
   confidence: number;
+  severity?: 'low' | 'medium' | 'high';
+  urgency?: 'immediate' | 'soon' | 'monitor';
+  recovery?: {
+    timeframe: string;
+    steps: string[];
+    success_rate: string;
+  };
 }
 
 export default function DiagnoseScreen() {
@@ -45,70 +53,34 @@ export default function DiagnoseScreen() {
 
   const diagnoseMutation = useMutation({
     mutationFn: async (imageUri: string) => {
-      console.log('Starting plant diagnosis process');
+      console.log('🏥 Starting enhanced plant health diagnosis process');
       try {
-        console.log('Reading image file for diagnosis...');
-        const base64 = await FileSystem.readAsStringAsync(imageUri, {
-          encoding: FileSystem.EncodingType.Base64,
-        });
-        const imageData = `data:image/jpeg;base64,${base64}`;
-
-        console.log('Image processed for diagnosis, size:', base64.length);
-
-        const messages: CoreMessage[] = [
-          {
-            role: 'system' as const,
-            content: 'You are a plant health assistant. Look at the plant photo and assess its health. Identify any problems like yellowing leaves, brown spots, wilting, or pest damage. Provide simple solutions and care tips. Keep it practical and easy to understand.',
-          },
-          {
-            role: 'user' as const,
-            content: 'Please check this plant for health issues and provide care advice.',
-          },
-        ];
-
-        const response = await callGeminiAI(messages, imageData);
-        console.log('AI diagnosis response received:', response.substring(0, 100));
-
-        // Enhanced text parsing with multiple fallback patterns
-        const statusMatch = response.match(/Status:\s*(healthy|warning|critical)/i) ||
-                           response.match(/(?:appears|looks|seems)\s+(healthy|warning|critical)/i) ||
-                           response.match(/(?:health|condition):\s*(healthy|warning|critical)/i);
-
-        const issuesMatch = response.match(/Issues:\s*([^\n]+)/i) ||
-                          response.match(/(?:problems|issues|concerns):\s*([^\n]+)/i) ||
-                          response.match(/(?:symptoms|signs):\s*([^\n]+)/i);
-
-        const solutionsMatch = response.match(/Solutions:\s*([^\n]+)/i) ||
-                           response.match(/(?:treatment|solutions|recommendations):\s*([^\n]+)/i) ||
-                           response.match(/(?:fix|resolve):\s*([^\n]+)/i);
-
-        const confidenceMatch = response.match(/Confidence:\s*(\d+)/i) ||
-                               response.match(/(\d+)%/i) ||
-                               response.match(/accuracy:\s*(\d+)/i);
-
-        const healthStatus = (statusMatch?.[1]?.toLowerCase() as 'healthy' | 'warning' | 'critical') || 'warning';
-        const issues = issuesMatch?.[1]?.split(',').map(s => s.trim()).filter(s => s.length > 0) || ['Plant health assessed'];
-        const solutions = solutionsMatch?.[1]?.split(',').map(s => s.trim()).filter(s => s.length > 0) || ['Continue regular care routine'];
-        const confidence = Math.min(100, Math.max(50, parseInt(confidenceMatch?.[1] || '75')));
-
-        console.log('Parsed diagnosis:', { healthStatus, issuesCount: issues.length, confidence });
-
+        // Use the new EnhancedAIService for superior plant health diagnosis
+        const diagnosisResult = await EnhancedAIService.diagnosePlantHealth(imageUri);
+        
+        console.log('✅ Enhanced AI diagnosis completed:', diagnosisResult.healthStatus);
+        
         return {
-          healthStatus,
-          issues,
-          solutions,
-          preventionTips: ['Monitor plant regularly for changes', 'Maintain consistent watering schedule', 'Ensure proper drainage'],
-          confidence
+          healthStatus: diagnosisResult.healthStatus,
+          issues: diagnosisResult.issues,
+          solutions: diagnosisResult.treatments,
+          preventionTips: diagnosisResult.prevention,
+          confidence: diagnosisResult.confidence,
+          severity: diagnosisResult.severity,
+          urgency: diagnosisResult.urgency,
+          recovery: diagnosisResult.recovery
         };
       } catch (error) {
-        console.error('Plant diagnosis processing failed:', error);
+        console.error('❌ Enhanced plant diagnosis failed:', error);
         // Return a fallback result instead of throwing
         return {
           healthStatus: 'warning' as const,
           issues: ['Plant health assessment completed'],
           solutions: ['Ensure adequate light exposure', 'Water when soil feels dry', 'Check for proper drainage'],
           preventionTips: ['Monitor leaves regularly', 'Maintain consistent care routine', 'Check soil moisture weekly'],
-          confidence: 75
+          confidence: 75,
+          severity: 'low' as const,
+          urgency: 'monitor' as const
         };
       }
     },

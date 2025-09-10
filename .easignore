@@ -7,3 +7,8 @@ node_modules/
 .expo/
 *.log
 .DS_Store
+
+# Ignore lockfiles to prevent conflicts
+bun.lock
+yarn.lock
+package-lock.json

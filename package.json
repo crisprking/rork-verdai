@@ -1,18 +1,25 @@
 {
-  "name": "puppulse-ai-dog-health",
+  "name": "floramind-ai-plants",
   "version": "1.0.0",
-  "main": "PupPulseUltimate/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "cd PupPulseUltimate && npx expo start",
-    "android": "cd PupPulseUltimate && npx expo start --android",
-    "ios": "cd PupPulseUltimate && npx expo start --ios",
-    "web": "cd PupPulseUltimate && npx expo start --web"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:ios": "eas build --platform ios",
+    "build:android": "eas build --platform android",
+    "submit:ios": "eas submit --platform ios"
   },
   "dependencies": {
-    "expo": "~53.0.0"
+    "expo": "~53.0.0",
+    "expo-file-system": "~18.1.11",
+    "expo-image-picker": "~16.1.4",
+    "expo-camera": "~16.1.11"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "description": "AI-powered plant identification and health diagnosis app"
 }

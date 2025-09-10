@@ -18,6 +18,7 @@ import { Image } from 'expo-image';
 import { useMutation } from '@tanstack/react-query';
 import { callGeminiAI } from '@/constants/api';
 import { backend } from '@/constants/backend';
+import { EnhancedAIService, PlantIdentificationResult } from '@/services/EnhancedAIService';
 import { useUser } from '@/hooks/useUser';
 import { useUsageControl } from '@/hooks/useUsageControl';
 import { UsageLimitModal } from '@/components/UsageLimitModal';
@@ -34,6 +35,11 @@ interface PlantInfo {
   confidence: number;
   description: string;
   care: string;
+  difficulty?: string;
+  toxicity?: string;
+  lightRequirements?: string;
+  wateringSchedule?: string;
+  careTips?: string[];
 }
 
 export default function IdentifyScreen() {
@@ -46,62 +52,26 @@ export default function IdentifyScreen() {
 
   const identifyMutation = useMutation({
     mutationFn: async (imageUri: string) => {
-      console.log('Starting plant identification process');
+      console.log('🌱 Starting enhanced plant identification process');
       try {
-        console.log('Reading image file...');
-        const base64 = await FileSystem.readAsStringAsync(imageUri, {
-          encoding: FileSystem.EncodingType.Base64,
-        });
-        const imageData = `data:image/jpeg;base64,${base64}`;
-
-        console.log('Image processed, size:', base64.length);
-
-        const messages: CoreMessage[] = [
-          {
-            role: 'system' as const,
-            content: 'You are a plant identification assistant. Look at the plant photo and identify the species. Provide the common name, scientific name if known, and basic care tips. Keep it simple and helpful for everyday plant owners.',
-          },
-          {
-            role: 'user' as const,
-            content: 'Please identify this plant and provide basic care information.',
-          },
-        ];
-
-        const response = await callGeminiAI(messages, imageData);
-        console.log('AI identification response received');
-
-        // Enhanced text parsing with multiple fallback patterns
-        const plantMatch = response.match(/Plant:\s*([^\n,]+)/i) ||
-                          response.match(/(?:This is|appears to be|looks like)\s+(?:a\s+)?([^\n,.]+)/i) ||
-                          response.match(/identified as\s+([^\n,.]+)/i);
-
-        const scientificMatch = response.match(/Scientific:\s*([^\n,]+)/i) ||
-                                response.match(/\(([A-Z][a-z]+\s+[a-z]+)\)/i) ||
-                                response.match(/species:\s*([^\n,]+)/i);
-
-        const careMatch = response.match(/Care:\s*([^\n]+)/i) ||
-                         response.match(/(?:care|needs|requires):\s*([^\n]+)/i) ||
-                         response.match(/watering:\s*([^\n]+)/i);
-
-        const confidenceMatch = response.match(/Confidence:\s*(\d+)/i) ||
-                               response.match(/(\d+)%/i) ||
-                               response.match(/accuracy:\s*(\d+)/i);
-
-        const plantName = plantMatch?.[1]?.trim() || 'Plant Identified';
-        const scientificName = scientificMatch?.[1]?.trim() || 'Analysis completed';
-        const careInstructions = careMatch?.[1]?.trim() || 'Water moderately, provide bright indirect light, and ensure good drainage.';
-        const confidence = Math.min(100, Math.max(50, parseInt(confidenceMatch?.[1] || '75')));
-
-        console.log('Parsed identification:', { plantName, scientificName, confidence });
-
+        // Use the new EnhancedAIService for superior plant identification
+        const identificationResult = await EnhancedAIService.identifyPlant(imageUri);
+        
+        console.log('✅ Enhanced AI identification completed:', identificationResult.name);
+        
         return {
-          name: plantName,
-          scientificName: scientificName,
-          care: careInstructions,
-          confidence: confidence
+          name: identificationResult.name,
+          scientificName: identificationResult.scientificName,
+          care: identificationResult.careTips.join('. ') || identificationResult.description,
+          confidence: identificationResult.confidence,
+          difficulty: identificationResult.difficulty,
+          toxicity: identificationResult.toxicity,
+          lightRequirements: identificationResult.lightRequirements,
+          wateringSchedule: identificationResult.wateringSchedule,
+          careTips: identificationResult.careTips
         };
       } catch (error) {
-        console.error('Plant identification processing failed:', error);
+        console.error('❌ Enhanced plant identification failed:', error);
         throw error;
       }
     },
