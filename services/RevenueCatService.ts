@@ -19,7 +19,7 @@ export interface SubscriptionTier {
 }
 
 export class RevenueCatService {
-  // RevenueCat API Keys (replace with your actual keys from RevenueCat dashboard)
+  // RevenueCat API Keys - MUST be configured in RevenueCat dashboard
   private static readonly API_KEY_IOS = 'appl_YOUR_IOS_API_KEY_HERE';
   private static readonly API_KEY_ANDROID = 'goog_YOUR_ANDROID_API_KEY_HERE';
   
@@ -32,11 +32,11 @@ export class RevenueCatService {
 
   // Product IDs (must match App Store Connect)
   public static readonly PRODUCTS = {
-    MONTHLY: 'com.floramind.aiplants.premium.monthly',
-    YEARLY: 'com.floramind.aiplants.premium.yearly',
-    LIFETIME: 'com.floramind.aiplants.premium.lifetime',
-    PLANT_PACK_10: 'com.floramind.aiplants.pack.10',
-    PLANT_PACK_50: 'com.floramind.aiplants.pack.50'
+    MONTHLY: 'app.rork.verdai.premium.monthly',
+    YEARLY: 'app.rork.verdai.premium.yearly',
+    LIFETIME: 'app.rork.verdai.premium.lifetime',
+    PLANT_PACK_10: 'app.rork.verdai.pack.10',
+    PLANT_PACK_50: 'app.rork.verdai.pack.50'
   };
 
   private static isInitialized = false;
