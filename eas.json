@@ -23,9 +23,6 @@
         "NODE_ENV": "production",
         "EXPO_USE_FAST_RESOLVER": "1"
       },
-      "hooks": {
-        "preInstall": "./eas-build-pre-install.sh"
-      },
       "ios": {
         "buildConfiguration": "Release",
         "autoIncrement": true,

@@ -8,15 +8,19 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:ios": "eas build --platform ios",
-    "build:android": "eas build --platform android"
+    "build:android": "eas build --platform android",
+    "eas-build-pre-install": "./eas-build-pre-install.sh"
   },
   "dependencies": {
     "expo": "~53.0.0",
-    "react": "18.3.1",
-    "react-native": "0.76.3"
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-native": "0.73.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.45",
+    "typescript": "~5.3.0"
   },
   "private": true
 }
