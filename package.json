@@ -11,11 +11,11 @@
     "build:android": "eas build --platform android"
   },
   "dependencies": {
-    "expo": "~51.0.28",
+    "expo": "~52.0.14",
     "expo-status-bar": "~1.12.1",
-    "expo-updates": "~0.25.28",
+    "expo-updates": "~0.26.10",
     "react": "18.2.0",
-    "react-native": "0.74.5"
+    "react-native": "0.75.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
