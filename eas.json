@@ -27,7 +27,7 @@
         "autoIncrement": true,
         "simulator": false,
         "credentialsSource": "remote"
-      },
+      }
     },
     "simulator": {
       "ios": {
