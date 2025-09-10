@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.floramind.aiplants",
+      "bundleIdentifier": "app.rork.verdai",
       "buildNumber": "9",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Access photos to identify plants and diagnose plant health issues",
@@ -38,7 +38,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#22C55E"
       },
-      "package": "com.floramind.aiplants"
+      "package": "app.rork.verdai"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -47,7 +47,7 @@
       "ios",
       "android"
     ],
-    "scheme": "floramind-ai-plants",
+    "scheme": "floramind-plants",
     "description": "AI-powered plant identification and care companion. Identify 10,000+ plants instantly, get health diagnosis, and receive personalized care advice.",
     "keywords": [
       "plants",
