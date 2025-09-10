@@ -28,7 +28,6 @@
         "simulator": false,
         "credentialsSource": "remote"
       },
-      "channel": "production"
     },
     "simulator": {
       "ios": {
