@@ -14,21 +14,21 @@
         "buildConfiguration": "Release",
         "autoIncrement": true,
         "simulator": false,
-        "enterpriseProvisioning": "universal",
         "credentialsSource": "remote"
       }
     },
     "production": {
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "EXPO_NO_CAPABILITY_SYNC": "1"
       },
       "ios": {
         "buildConfiguration": "Release",
         "autoIncrement": true,
         "simulator": false,
-        "enterpriseProvisioning": "universal",
         "credentialsSource": "remote"
-      }
+      },
+      "channel": "production"
     },
     "simulator": {
       "ios": {
