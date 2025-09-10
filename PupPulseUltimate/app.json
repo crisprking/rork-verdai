@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.abrahamtrueba9898.puppulse",
-      "buildNumber": "1",
+      "buildNumber": "3",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Access photos to analyze your dog's health symptoms and track wellness",
         "NSCameraUsageDescription": "Take photos for AI-powered dog health analysis and symptom checking",

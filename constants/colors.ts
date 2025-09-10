@@ -1,61 +1,51 @@
-const tintColorLight = "#1B5E20";
+const tintColorLight = "#1B4332";
 
 export default {
   light: {
-    text: "#0D1B0A",
-    background: "#F8FDF8", // Eco-friendly light green
+    text: "#0F1419",
+    background: "#FEFFFE", // Pure sophisticated white
     tint: tintColorLight,
-    tabIconDefault: "#81C784",
+    tabIconDefault: "#95A5A6",
     tabIconSelected: tintColorLight,
-    primary: "#1B5E20", // Deep forest green - eco theme
-    secondary: "#2E7D32", // Rich eco green
-    accent: "#4CAF50", // Vibrant eco accent
+    primary: "#1B4332", // Deep emerald forest - luxury botanical
+    secondary: "#2D5A27", // Rich forest green
+    accent: "#52B788", // Vibrant sage accent
     surface: "#FFFFFF",
-    border: "#C8E6C9",
-    textSecondary: "#4E7C59",
+    border: "#E8F5E8",
+    textSecondary: "#52796F",
     
-    // EcoGarden sustainable color palette
-    ecoPrimary: "#1B5E20", // Deep forest green - main brand
-    ecoSecondary: "#2E7D32", // Rich eco green
-    ecoAccent: "#66BB6A", // Vibrant eco accent
-    ecoGold: "#FFC107", // Sustainable gold accent
-    ecoEarth: "#8D6E63", // Earth brown accent
-    ecoBackground: "#F8FDF8", // Eco-friendly light green
-    ecoCard: "#FFFFFF", // Pure white cards
-    ecoText: "#0D1B0A", // Deep eco text
-    ecoTextSecondary: "#4E7C59", // Muted eco green
-    ecoBorder: "#C8E6C9", // Subtle eco border
-    ecoGradientStart: "#1B5E20", // Deep forest
-    ecoGradientEnd: "#2E7D32", // Rich eco
-    ecoLight: "#E8F5E8", // Very light eco
-    ecoDark: "#0A1F0A", // Very dark forest
-    ecoMint: "#A5D6A7", // Soft eco mint
-    ecoIvory: "#F1F8E9", // Eco ivory
+    // Premium botanical color palette - Old Money Aesthetic
+    luxuryPrimary: "#1B4332", // Deep emerald forest - main brand
+    luxurySecondary: "#2D5A27", // Rich forest green
+    luxuryAccent: "#74C69D", // Soft mint highlight
+    luxuryGold: "#D4AF37", // Classic gold accent
+    luxuryRose: "#F4A261", // Warm terracotta accent
+    luxuryBackground: "#FEFFFE", // Pure sophisticated white
+    luxuryCard: "#FFFFFF", // Pure white cards
+    luxuryText: "#0F1419", // Deep charcoal text
+    luxuryTextSecondary: "#52796F", // Muted sage
+    luxuryBorder: "#E8F5E8", // Subtle mint border
+    luxuryGradientStart: "#1B4332", // Deep emerald
+    luxuryGradientEnd: "#2D5A27", // Rich forest
+    luxuryLight: "#F1F8E9", // Very light botanical
+    luxuryDark: "#081C15", // Very dark forest
+    luxuryMint: "#B7E4C7", // Soft mint
+    luxuryIvory: "#F8F9FA", // Elegant ivory
     
-    // Environmental status colors
-    success: "#4CAF50", // Eco success green
-    warning: "#FF9800", // Eco warning orange
-    error: "#F44336", // Clean error red
-    info: "#2196F3", // Eco info blue
+    // Premium status colors
+    success: "#22C55E", // Modern success green
+    warning: "#F59E0B", // Premium amber
+    error: "#EF4444", // Clean error red
+    info: "#3B82F6", // Professional blue
     
-    // Carbon footprint colors
-    carbonLow: "#4CAF50", // Low carbon - green
-    carbonMedium: "#FF9800", // Medium carbon - orange
-    carbonHigh: "#F44336", // High carbon - red
-    
-    // Weather colors
-    sunny: "#FFC107", // Sunny weather
-    cloudy: "#9E9E9E", // Cloudy weather
-    rainy: "#2196F3", // Rainy weather
-    
-    // Enhanced eco palette
-    ecoPlatinum: "#E0F2E0", // Eco platinum
-    ecoCharcoal: "#2E2E2E", // Eco charcoal
-    ecoEmerald: "#2E7D32", // Rich emerald
-    ecoForest: "#1B5E20", // Deep forest
-    ecoSage: "#689F38", // Eco sage
-    ecoPearl: "#F1F8E9", // Eco pearl
-    ecoOnyx: "#0A1F0A", // Eco onyx
+    // Enhanced luxury palette for premium feel
+    luxuryPlatinum: "#E5E7EB", // Platinum accents
+    luxuryCharcoal: "#374151", // Deep charcoal
+    luxuryEmerald: "#059669", // Rich emerald
+    luxuryForest: "#064E3B", // Deep forest
+    luxurySage: "#6B7280", // Sophisticated sage
+    luxuryPearl: "#F9FAFB", // Pearl white
+    luxuryOnyx: "#111827", // Onyx black
   },
 };
 

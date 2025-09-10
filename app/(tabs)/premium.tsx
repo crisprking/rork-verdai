@@ -63,6 +63,61 @@ export default function PremiumScreen() {
     );
   };
 
+  const handleDeleteAccount = async () => {
+    Alert.alert(
+      'Delete Account',
+      'Are you sure you want to permanently delete your account? This action cannot be undone.\n\nAll your data will be permanently removed, including:\n• Plant identification history\n• Care journal entries\n• Premium subscription\n• All personal information',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { 
+          text: 'Delete Account', 
+          style: 'destructive',
+          onPress: () => {
+            Alert.alert(
+              'Final Confirmation',
+              'This is your last chance to cancel. Your account and all data will be permanently deleted.',
+              [
+                { text: 'Cancel', style: 'cancel' },
+                { 
+                  text: 'Yes, Delete Forever', 
+                  style: 'destructive',
+                  onPress: async () => {
+                    try {
+                      // Clear all user data
+                      await logout();
+                      
+                      // Show confirmation
+                      Alert.alert(
+                        'Account Deleted',
+                        'Your account and all associated data have been permanently deleted. Thank you for using Botanica.',
+                        [
+                          { 
+                            text: 'OK', 
+                            onPress: () => {
+                              // Navigate to welcome screen or close app
+                              router.replace('/(tabs)');
+                            }
+                          }
+                        ]
+                      );
+                    } catch (error) {
+                      console.error('Account deletion error:', error);
+                      Alert.alert(
+                        'Error',
+                        'There was an error deleting your account. Please try again or contact support.',
+                        [{ text: 'OK' }]
+                      );
+                    }
+                  }
+                }
+              ]
+            );
+          }
+        }
+      ]
+    );
+  };
+
   const handleSubscribe = async (planId: string) => {
     if (isProcessingPayment) return;
     
@@ -263,9 +318,14 @@ export default function PremiumScreen() {
               <Text style={styles.userName}>{user?.name || user?.email}</Text>
               <Text style={styles.userEmail}>{user?.email}</Text>
             </View>
-            <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-              <LogOut color={Colors.light.luxuryCard} size={20} />
-            </TouchableOpacity>
+            <View style={styles.userActions}>
+              <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+                <LogOut color={Colors.light.luxuryCard} size={20} />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.deleteButton} onPress={handleDeleteAccount}>
+                <Text style={styles.deleteButtonText}>Delete Account</Text>
+              </TouchableOpacity>
+            </View>
           </View>
           
           <View style={styles.headerIconContainer}>
@@ -645,8 +705,26 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'rgba(255, 255, 255, 0.8)',
   },
+  userActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
   logoutButton: {
     padding: 8,
+  },
+  deleteButton: {
+    backgroundColor: 'rgba(239, 68, 68, 0.2)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(239, 68, 68, 0.4)',
+  },
+  deleteButtonText: {
+    fontSize: 12,
+    color: '#FCA5A5',
+    fontWeight: '600',
   },
   headerIconContainer: {
     position: 'relative',

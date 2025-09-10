@@ -1,0 +1,77 @@
+{
+  "expo": {
+    "name": "PupPulse: AI Dog Health",
+    "slug": "puppulse-ai-dog-health",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4CAF50"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.abrahamtrueba98.PupPulse",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Access photos to analyze your dog's health symptoms and track wellness",
+        "NSCameraUsageDescription": "Take photos for AI-powered dog health analysis and symptom checking",
+        "NSMicrophoneUsageDescription": "Record audio for veterinary consultations and health monitoring",
+        "NSLocationWhenInUseUsageDescription": "Find nearby veterinary clinics and emergency services for your dog",
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": [
+          "en"
+        ],
+        "UIBackgroundModes": [
+          "background-processing",
+          "background-fetch"
+        ],
+        "UIRequiredDeviceCapabilities": [
+          "armv7"
+        ],
+        "UIStatusBarStyle": "UIStatusBarStyleLightContent"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#4CAF50"
+      },
+      "package": "com.abrahamtrueba98.PupPulse"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "platforms": [
+      "ios"
+    ],
+    "scheme": "puppulse-doghealth",
+    "description": "AI-powered dog health companion for comprehensive pet wellness monitoring, symptom checking, and veterinary care coordination",
+    "keywords": [
+      "dog",
+      "health",
+      "AI",
+      "veterinary",
+      "pet",
+      "wellness",
+      "monitoring",
+      "care",
+      "puppy",
+      "canine"
+    ],
+    "privacy": "public",
+    "primaryColor": "#4CAF50",
+    "backgroundColor": "#F5F5F5",
+    "extra": {
+      "eas": {
+        "projectId": "efb69043-db84-4ac8-afda-50010c4321be"
+      }
+    }
+  }
+}

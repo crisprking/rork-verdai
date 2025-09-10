@@ -17,9 +17,8 @@ export default function TabLayout() {
     );
   }
 
-  if (!isAuthenticated) {
-    return <Redirect href="/auth" />;
-  }
+  // Allow access to core features without authentication (Apple App Store compliance)
+  // Authentication is optional for premium features only
 
   return (
     <Tabs
@@ -55,7 +54,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "AI Chat",
+          title: "Chat",
           tabBarIcon: ({ color, focused }) => (
             <MessageCircle 
               color={color} 
@@ -68,7 +67,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="identify"
         options={{
-          title: "AI ID",
+          title: "Identify",
           tabBarIcon: ({ color, focused }) => (
             <Search 
               color={color} 
@@ -81,7 +80,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="diagnose"
         options={{
-          title: "AI Health",
+          title: "Health",
           tabBarIcon: ({ color, focused }) => (
             <Stethoscope 
               color={color} 
@@ -94,7 +93,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="care"
         options={{
-          title: "Smart Care",
+          title: "Care",
           tabBarIcon: ({ color, focused }) => (
             <Heart 
               color={color} 
@@ -107,7 +106,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="passport"
         options={{
-          title: "AI Journal",
+          title: "Journal",
           tabBarIcon: ({ color, focused }) => (
             <Notebook 
               color={color} 

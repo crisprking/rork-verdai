@@ -40,7 +40,7 @@ export default function HomeScreen() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: `Hi ${user?.name || 'there'}! I'm FloraMind, your AI plant intelligence assistant. I can identify plant species, diagnose health issues, predict growth patterns, and provide personalized care recommendations using advanced machine learning. What would you like to know about your plants today?`,
+      text: `Hi there! I'm your plant care companion. I can help you identify plants, diagnose health issues, and provide personalized care advice. What can I help you with today?`,
       isUser: false,
       timestamp: new Date(),
     },
@@ -54,7 +54,7 @@ export default function HomeScreen() {
       const messages: CoreMessage[] = [
         {
           role: 'system' as const,
-          content: 'You are FloraMind, an advanced AI plant intelligence assistant. You specialize in plant species identification, health diagnosis, growth prediction, and personalized care recommendations using machine learning. Provide detailed, scientific, yet accessible advice about plant care, identification, and health. Focus on AI-powered insights, data-driven recommendations, and intelligent plant care solutions. Always mention your AI capabilities and how they enhance plant care.'
+          content: 'You are a helpful plant care assistant. Provide clear, practical advice about plant care, identification, and health. Keep responses friendly and easy to understand. Focus on actionable tips that work for everyday plant owners.'
         },
         {
           role: 'user' as const,
@@ -123,12 +123,12 @@ export default function HomeScreen() {
   }, [inputText, sendMessageMutation, canUseFeature]);
 
   const quickQuestions = [
-    "🔍 Identify this plant species",
-    "🏥 Diagnose plant health issues", 
-    "📈 Predict growth patterns",
-    "⚡ Optimize care schedule",
-    "🌱 Carbon footprint analysis",
-    "🤖 AI care recommendations"
+    "How often should I water my houseplants?",
+    "Why are my plant's leaves turning yellow?",
+    "What's the best light for indoor plants?",
+    "How do I know if my plant is healthy?",
+    "When should I repot my plants?",
+    "How to prevent common plant pests?"
   ];
 
   return (
@@ -149,8 +149,8 @@ export default function HomeScreen() {
               <Sparkles color="rgba(212, 175, 55, 0.8)" size={16} />
             </View>
           </View>
-          <Text style={styles.headerTitle}>FloraMind</Text>
-          <Text style={styles.headerSubtitle}>AI Plant Intelligence & Care</Text>
+          <Text style={styles.headerTitle}>Botanica</Text>
+          <Text style={styles.headerSubtitle}>Your Personal Plant Care Companion</Text>
           {isPremium ? (
             <View style={styles.premiumBadge}>
               <Crown color={Colors.light.luxuryGold} size={14} />
@@ -272,7 +272,7 @@ export default function HomeScreen() {
               style={styles.textInput}
               value={inputText}
               onChangeText={setInputText}
-              placeholder="Ask FloraMind about AI plant intelligence, species identification, or health diagnosis..."
+              placeholder="Ask me about plant care, identification, or health..."
               placeholderTextColor={Colors.light.luxuryTextSecondary}
               multiline
               maxLength={300}

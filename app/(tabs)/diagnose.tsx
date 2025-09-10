@@ -152,38 +152,65 @@ export default function DiagnoseScreen() {
   const pickImage = useCallback(async (useCamera: boolean = false) => {
     try {
       console.log('Picking image for diagnosis, camera:', useCamera);
-      let result;
-
+      
       if (useCamera) {
+        // Request camera permission first
         const { status } = await ImagePicker.requestCameraPermissionsAsync();
         if (status !== 'granted') {
-          Alert.alert('Permission needed', 'Camera permission required.');
+          Alert.alert(
+            'Camera Permission Required',
+            'Please grant camera permission to take photos of your plants for health diagnosis.',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              { text: 'Open Settings', onPress: () => ImagePicker.requestCameraPermissionsAsync() }
+            ]
+          );
           return;
         }
-
-        result = await ImagePicker.launchCameraAsync({
-          mediaTypes: ImagePicker.MediaTypeOptions.Images,
-          allowsEditing: true,
-          aspect: [1, 1],
-          quality: 0.4, // Optimized quality for balance of speed and accuracy
-        });
       } else {
-        result = await ImagePicker.launchImageLibraryAsync({
-          mediaTypes: ImagePicker.MediaTypeOptions.Images,
-          allowsEditing: true,
-          aspect: [1, 1],
-          quality: 0.3,
-        });
+        // Request media library permission
+        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          Alert.alert(
+            'Photo Library Permission Required',
+            'Please grant photo library permission to select images for diagnosis.',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              { text: 'Open Settings', onPress: () => ImagePicker.requestMediaLibraryPermissionsAsync() }
+            ]
+          );
+          return;
+        }
       }
 
-      if (!result.canceled && result.assets[0]) {
+      const options = {
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [1, 1] as [number, number],
+        quality: 0.4, // Optimized quality for balance of speed and accuracy
+        exif: false, // Disable EXIF data for better performance
+        base64: false, // Don't include base64 for better performance
+      };
+
+      const result = useCamera
+        ? await ImagePicker.launchCameraAsync(options)
+        : await ImagePicker.launchImageLibraryAsync(options);
+
+      if (!result.canceled && result.assets && result.assets[0]) {
         console.log('Image selected for diagnosis successfully');
         setSelectedImage(result.assets[0].uri);
         setResult(null);
       }
     } catch (error) {
       console.error('Error picking image:', error);
-      Alert.alert('Error', 'Failed to select image.');
+      Alert.alert(
+        'Error', 
+        'Failed to select image. Please try again or check your permissions.',
+        [
+          { text: 'OK', style: 'default' },
+          { text: 'Try Gallery', onPress: () => pickImage(false) }
+        ]
+      );
     }
   }, []);
 

@@ -76,3 +76,4 @@ fs.writeFileSync('./assets/icon.png', buffer);
 
 console.log('✅ App icon generated successfully!');
 console.log('📱 Icon saved as: assets/icon.png (1024x1024)');
+

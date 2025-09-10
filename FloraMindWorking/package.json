@@ -1,23 +1,90 @@
 {
-  "name": "floramindworking",
+  "name": "floramind-ai-plant-ai",
   "version": "1.0.0",
+  "description": "FloraMind AI - The most advanced AI-powered plant identification and health diagnosis assistant that combines machine learning with comprehensive botanical knowledge to revolutionize plant care.",
   "main": "index.ts",
+  "author": "Abraham Trueba <abrahamtrueba9898@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/abrahamtrueba9898/rork-verdai#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abrahamtrueba9898/rork-verdai.git"
+  },
+  "keywords": [
+    "plants",
+    "AI",
+    "identification",
+    "gardening",
+    "plant-care",
+    "botany",
+    "green",
+    "nature",
+    "sustainability",
+    "environment",
+    "smart",
+    "assistant",
+    "health",
+    "monitoring",
+    "tips",
+    "recommendations",
+    "machine-learning",
+    "computer-vision",
+    "plant-database",
+    "care-guide",
+    "react-native",
+    "expo",
+    "typescript",
+    "mobile",
+    "ios"
+  ],
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "expo export",
+    "build:ios": "eas build --platform ios",
+    "build:android": "eas build --platform android",
+    "prebuild": "npm install --no-package-lock --no-audit --no-fund",
+    "postinstall": "echo 'Using npm for dependency management'",
+    "setup-supabase": "node scripts/setup-supabase.js",
+    "test-supabase": "node -e \"console.log('Testing Supabase connection...'); require('./services/SupabaseService').supabase.from('plants').select('count').then(r => console.log('✅ Supabase connected!')).catch(e => console.log('❌ Supabase connection failed:', e.message))\""
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "@supabase/supabase-js": "^2.57.4",
     "expo": "~53.0.22",
+    "expo-blur": "~14.1.5",
+    "expo-camera": "~16.1.11",
+    "expo-constants": "~17.1.7",
+    "expo-file-system": "~18.1.6",
+    "expo-font": "~13.3.2",
+    "expo-haptics": "~14.1.4",
+    "expo-image-picker": "~16.1.4",
+    "expo-linear-gradient": "~14.1.5",
+    "expo-linking": "~7.1.7",
+    "expo-location": "~18.1.6",
+    "expo-router": "~5.1.6",
+    "expo-splash-screen": "~0.30.10",
     "expo-status-bar": "~2.2.3",
+    "expo-system-ui": "~5.0.11",
+    "expo-web-browser": "~14.2.0",
     "react": "19.0.0",
-    "react-native": "0.79.6"
+    "react-native": "0.79.5",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1",
+    "react-native-svg": "15.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
+    "sharp": "^0.34.3",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

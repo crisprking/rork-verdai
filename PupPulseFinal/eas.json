@@ -1,0 +1,50 @@
+{
+  "cli": {
+    "version": ">= 3.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "ios": {
+        "simulator": false,
+        "autoIncrement": true,
+        "buildConfiguration": "Release"
+      },
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "channel": "production"
+    },
+    "testflight": {
+      "ios": {
+        "simulator": false,
+        "autoIncrement": true,
+        "buildConfiguration": "Release"
+      },
+      "distribution": "internal",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "channel": "testflight"
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "abrahamtrueba@berkeley.edu",
+        "ascAppId": "your-app-store-connect-app-id",
+        "appleTeamId": "K2W4SX33VD"
+      }
+    }
+  }
+}

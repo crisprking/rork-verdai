@@ -157,25 +157,65 @@ export default function IdentifyScreen() {
   const pickImage = useCallback(async (useCamera = false) => {
     try {
       console.log('Picking image, camera:', useCamera);
+      
+      if (useCamera) {
+        // Request camera permission first
+        const { status } = await ImagePicker.requestCameraPermissionsAsync();
+        if (status !== 'granted') {
+          Alert.alert(
+            'Camera Permission Required',
+            'Please grant camera permission to take photos of your plants.',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              { text: 'Open Settings', onPress: () => ImagePicker.requestCameraPermissionsAsync() }
+            ]
+          );
+          return;
+        }
+      } else {
+        // Request media library permission
+        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          Alert.alert(
+            'Photo Library Permission Required',
+            'Please grant photo library permission to select images.',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              { text: 'Open Settings', onPress: () => ImagePicker.requestMediaLibraryPermissionsAsync() }
+            ]
+          );
+          return;
+        }
+      }
+
       const options = {
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [1, 1] as [number, number],
         quality: 0.4, // Optimized quality for balance of speed and accuracy
+        exif: false, // Disable EXIF data for better performance
+        base64: false, // Don't include base64 for better performance
       };
 
       const result = useCamera
         ? await ImagePicker.launchCameraAsync(options)
         : await ImagePicker.launchImageLibraryAsync(options);
 
-      if (!result.canceled && result.assets[0]) {
+      if (!result.canceled && result.assets && result.assets[0]) {
         console.log('Image selected successfully');
         setSelectedImage(result.assets[0].uri);
         setResult(null);
       }
     } catch (error) {
       console.error('Error picking image:', error);
-      Alert.alert('Error', 'Failed to select image');
+      Alert.alert(
+        'Error', 
+        'Failed to select image. Please try again or check your permissions.',
+        [
+          { text: 'OK', style: 'default' },
+          { text: 'Try Gallery', onPress: () => pickImage(false) }
+        ]
+      );
     }
   }, []);
 
