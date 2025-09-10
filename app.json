@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "22",
+      "buildNumber": "23",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
