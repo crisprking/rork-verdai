@@ -13,7 +13,11 @@
     "production": {
       "env": {
         "NODE_ENV": "production",
-        "EXPO_USE_FAST_RESOLVER": "1"
+        "EXPO_USE_FAST_RESOLVER": "1",
+        "EAS_BUILD_RUNNER": "eas-build-worker-macos-m-medium"
+      },
+      "cache": {
+        "disabled": true
       }
     }
   },
