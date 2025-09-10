@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FloraMind: AI Plants",
-    "slug": "floramind-ai-plants",
+    "slug": "plantai2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
