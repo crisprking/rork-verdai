@@ -18,7 +18,9 @@
       },
       "ios": {
         "buildConfiguration": "Release",
-        "autoIncrement": true
+        "autoIncrement": true,
+        "simulator": false,
+        "enterpriseProvisioning": "universal"
       }
     }
   },
