@@ -1,0 +1,9 @@
+# Ignore subdirectories with conflicting configs
+FloraMindWorking/
+floramind-ai-plants-repo/
+PupPulse*/
+temp-build/
+node_modules/
+.expo/
+*.log
+.DS_Store
