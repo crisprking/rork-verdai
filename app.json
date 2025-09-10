@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "9",
+      "buildNumber": "10",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "FloraMind needs access to your photo library to identify plants and diagnose plant health issues. Your photos are processed securely and never stored permanently.",
         "NSCameraUsageDescription": "FloraMind needs camera access to take photos of plants for AI-powered identification and health analysis. Photos are processed locally and securely.",
@@ -64,13 +64,13 @@
     "privacy": "public",
     "primaryColor": "#22C55E",
     "backgroundColor": "#F0FDF4",
-    "owner": "devdeving34",
+    "owner": "devdeving99",
+    "privacyPolicy": "https://floramind.ai/privacy",
+    "termsOfService": "https://floramind.ai/terms",
     "extra": {
       "eas": {
-        "projectId": "359be5a5-c938-4c1d-bd0b-36ad4c7d49c5"
+        "projectId": "5b9aafad-060d-4b3e-99f9-0911e756fbd2"
       }
-    },
-    "privacyPolicy": "https://floramind.ai/privacy",
-    "termsOfService": "https://floramind.ai/terms"
+    }
   }
 }
