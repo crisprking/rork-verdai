@@ -1,7 +1,7 @@
 // AI Service for plant identification and health diagnosis
 class AIService {
   private static instance: AIService;
-  private apiEndpoint = 'https://floramind-api.vercel.app/api'; // Vercel deployment URL
+  private apiEndpoint = 'https://rork-verdai-b3gqhyfdk-crisprkings-projects.vercel.app/api'; // Vercel deployment URL
 
   static getInstance(): AIService {
     if (!AIService.instance) {
