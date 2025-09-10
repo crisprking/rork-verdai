@@ -803,6 +803,18 @@
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
 
+"@posthog/core@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@posthog/core/-/core-1.0.2.tgz"
+  integrity sha512-hWk3rUtJl2crQK0WNmwg13n82hnTwB99BT99/XI5gZSvIlYZ1TPmMZE8H2dhJJ98J/rm9vYJ/UXNzw3RV5HTpQ==
+
+"@react-native-async-storage/async-storage@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-2.2.0.tgz"
+  integrity sha512-gvRvjR5JAaUZF8tv2Kcq/Gbt3JHwbKFYfmb445rhOj6NUMx3qPLixmDx5pZAyb9at1bYvJ4/eTUipU5aki45xw==
+  dependencies:
+    merge-options "^3.0.4"
+
 "@react-native/babel-plugin-codegen@0.79.6":
   version "0.79.6"
   dependencies:
@@ -1541,6 +1553,11 @@ is-docker@^2.0.0, is-docker@^2.1.1:
 is-fullwidth-code-point@^3.0.0:
   version "3.0.0"
 
+is-plain-obj@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz"
+  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
+
 is-wsl@^2.1.1, is-wsl@^2.2.0:
   version "2.2.0"
   dependencies:
@@ -1644,6 +1661,13 @@ lru-cache@^5.1.1:
 
 marky@^1.2.2:
   version "1.3.0"
+
+merge-options@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/merge-options/-/merge-options-3.0.4.tgz"
+  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
+  dependencies:
+    is-plain-obj "^2.1.0"
 
 "mime-db@>= 1.43.0 < 2":
   version "1.54.0"
@@ -1849,6 +1873,13 @@ postcss@~8.4.32:
     nanoid "^3.3.7"
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
+
+posthog-react-native@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/posthog-react-native/-/posthog-react-native-4.5.0.tgz"
+  integrity sha512-b8SMHcEISqC62K5NN0hkn/DXAU/ZaLqlDVWmnraDRrFb81V/Xiufd5B+ta7QlMr16OYzAJZjNoq2GGJB7UdFLg==
+  dependencies:
+    "@posthog/core" "1.0.2"
 
 pretty-bytes@^5.6.0:
   version "5.6.0"
