@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "FloraMind: AI Plants",
+    "name": "FloraMind AI Plants",
     "slug": "floramindfinalversion",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,21 +17,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "17",
-      "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "FloraMind needs access to your photo library to identify plants and diagnose plant health issues. Your photos are processed securely and never stored permanently.",
-        "NSCameraUsageDescription": "FloraMind needs camera access to take photos of plants for AI-powered identification and health analysis. Photos are processed locally and securely.",
-        "NSLocationWhenInUseUsageDescription": "FloraMind uses your location to provide region-specific plant care recommendations and identify local plant species. Location data is never shared or stored.",
-        "ITSAppUsesNonExemptEncryption": false,
-        "CFBundleAllowMixedLocalizations": true,
-        "CFBundleLocalizations": [
-          "en"
-        ],
-        "UIRequiredDeviceCapabilities": [
-          "armv7"
-        ],
-        "UIStatusBarStyle": "UIStatusBarStyleLightContent"
-      }
+      "buildNumber": "18"
     },
     "android": {
       "adaptiveIcon": {
@@ -47,30 +33,24 @@
       "ios",
       "android"
     ],
-    "scheme": "floramind-plants",
-    "description": "🌱 FloraMind: The Ultimate AI Plant Care Companion. Instantly identify 10,000+ plants with 95% accuracy, get expert health diagnosis, and receive personalized care advice. Perfect for plant lovers, gardeners, and botanists. Features include plant identification, health monitoring, care schedules, and expert tips. Download now and transform your plant care experience!",
+    "scheme": "floramindfinalversion",
+    "description": "AI-powered plant identification and care companion",
     "keywords": [
       "plants",
       "identification",
       "AI",
       "botany",
-      "gardening",
-      "plant care",
-      "health diagnosis",
-      "nature",
-      "flora",
-      "green"
+      "gardening"
     ],
     "privacy": "public",
     "primaryColor": "#22C55E",
     "backgroundColor": "#F0FDF4",
     "owner": "devdeving99",
-    "privacyPolicy": "https://floramind.ai/privacy",
-    "termsOfService": "https://floramind.ai/terms",
     "extra": {
       "eas": {
         "projectId": "f7a884ca-71fb-49b5-93f6-45b11d573faa"
       }
-    }
+    },
+    "sdkVersion": "53.0.0"
   }
 }
