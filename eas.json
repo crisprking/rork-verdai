@@ -20,7 +20,8 @@
         "buildConfiguration": "Release",
         "autoIncrement": true,
         "simulator": false,
-        "enterpriseProvisioning": "universal"
+        "enterpriseProvisioning": "universal",
+        "credentialsSource": "remote"
       }
     }
   },
