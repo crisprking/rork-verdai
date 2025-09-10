@@ -13,7 +13,9 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "app.rork.verdai",
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +27,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3caf5271-0a86-45a1-859d-9aaca585f431"
+      }
+    },
+    "owner": "devdeving99"
   }
 }
