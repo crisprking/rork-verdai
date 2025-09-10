@@ -1,14 +1,22 @@
-# Ignore subdirectories with conflicting configs
+# CRITICAL: Ignore ALL subdirectories to prevent EAS confusion
 FloraMindWorking/
 floramind-ai-plants-repo/
+floramind-ai-plants-clean/
 PupPulse*/
+PupPulseFinal/
+PupPulseTestFlight/
+PupPulseUltimate/
 temp-build/
 node_modules/
 .expo/
 *.log
 .DS_Store
 
-# Ignore lockfiles to prevent conflicts
-bun.lock
-yarn.lock
-package-lock.json
+# Ignore ALL bun-related files
+**/.bunrc
+**/bun.lock
+**/bun.lockb
+**/bunfig.toml
+*.bun
+
+# DO NOT ignore package-lock.json - we need it for npm!

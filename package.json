@@ -2,7 +2,6 @@
   "name": "floramind-ai-plants",
   "version": "1.0.0",
   "main": "index.ts",
-  "packageManager": "npm@10.2.4",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
