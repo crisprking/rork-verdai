@@ -1,0 +1,17 @@
+{
+  "name": "floramind-api",
+  "version": "1.0.0",
+  "description": "FloraMind AI Plant Care API",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "tsc",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
