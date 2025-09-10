@@ -14,22 +14,16 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.rork.verdai",
-      "buildNumber": "18",
+      "buildNumber": "19",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false,
-        "UIBackgroundModes": []
-      },
-      "entitlements": {
-        "aps-environment": null
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,7 +33,6 @@
         "projectId": "3caf5271-0a86-45a1-859d-9aaca585f431"
       }
     },
-    "owner": "devdeving99",
-    "plugins": []
+    "owner": "devdeving99"
   }
 }
