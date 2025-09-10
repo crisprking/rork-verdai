@@ -32,11 +32,11 @@ export class RevenueCatService {
 
   // Product IDs (must match App Store Connect)
   public static readonly PRODUCTS = {
-    MONTHLY: 'floramind_premium_monthly',
-    YEARLY: 'floramind_premium_yearly',
-    LIFETIME: 'floramind_lifetime',
-    PLANT_PACK_10: 'plant_identifications_10',
-    PLANT_PACK_50: 'plant_identifications_50'
+    MONTHLY: 'com.floramind.aiplants.premium.monthly',
+    YEARLY: 'com.floramind.aiplants.premium.yearly',
+    LIFETIME: 'com.floramind.aiplants.premium.lifetime',
+    PLANT_PACK_10: 'com.floramind.aiplants.pack.10',
+    PLANT_PACK_50: 'com.floramind.aiplants.pack.50'
   };
 
   private static isInitialized = false;
