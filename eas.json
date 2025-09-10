@@ -30,6 +30,11 @@
         "enterpriseProvisioning": "universal",
         "credentialsSource": "remote"
       }
+    },
+    "simulator": {
+      "ios": {
+        "simulator": true
+      }
     }
   },
   "submit": {
