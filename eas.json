@@ -13,8 +13,7 @@
     "production": {
       "ios": {
         "simulator": false,
-        "autoIncrement": true,
-        "bundleIdentifier": "com.floramind.aiplants"
+        "autoIncrement": true
       },
       "android": {
         "buildType": "apk"
@@ -22,11 +21,6 @@
     }
   },
   "submit": {
-    "production": {
-      "ios": {
-        "bundleIdentifier": "com.floramind.aiplants",
-        "sku": "floramind-ai-plants"
-      }
-    }
+    "production": {}
   }
 }
