@@ -27,7 +27,8 @@
         "autoIncrement": true,
         "simulator": false,
         "enterpriseProvisioning": "universal",
-        "credentialsSource": "remote"
+        "credentialsSource": "remote",
+        "image": "latest"
       }
     },
     "simulator": {
