@@ -17,7 +17,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.rork.verdai.ship",
+      "bundleIdentifier": "app.rork.verdai",
       "buildNumber": "33",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -31,7 +31,8 @@
       "package": "app.rork.verdai"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "extra": {
       "eas": {
