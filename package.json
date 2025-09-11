@@ -18,7 +18,17 @@
     "react": "18.3.1",
     "react-native": "0.76.3",
     "react-native-web": "~0.19.12",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-native-purchases": "^8.2.1",
+    "posthog-react-native": "^3.3.10",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "expo-linear-gradient": "~13.0.2",
+    "expo-image-picker": "~15.0.7",
+    "expo-notifications": "~0.29.11",
+    "expo-blur": "~13.0.2",
+    "expo-file-system": "~17.0.1",
+    "@supabase/supabase-js": "^2.39.1",
+    "react-native-url-polyfill": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
