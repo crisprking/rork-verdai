@@ -14,7 +14,8 @@
         "buildConfiguration": "Release",
         "autoIncrement": true,
         "simulator": false,
-        "credentialsSource": "remote"
+        "credentialsSource": "remote",
+        "image": "latest"
       }
     },
     "production": {
