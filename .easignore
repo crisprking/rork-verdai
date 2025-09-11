@@ -1,4 +1,4 @@
-# CRITICAL: Ignore ALL subdirectories to prevent EAS confusion
+# CRITICAL: Ignore ALL conflicting directories and files
 FloraMindWorking/
 floramind-ai-plants-repo/
 floramind-ai-plants-clean/
@@ -19,4 +19,10 @@ node_modules/
 **/bunfig.toml
 *.bun
 
-# DO NOT ignore package-lock.json - we need it for npm!
+# Ignore duplicate package.json files in subdirectories
+**/package.json
+**/package-lock.json
+
+# DO NOT ignore OUR package-lock.json - we need it for npm!
+!package-lock.json
+!package.json

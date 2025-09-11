@@ -19,8 +19,7 @@
     },
     "production": {
       "env": {
-        "NODE_ENV": "production",
-        "EXPO_NO_CAPABILITY_SYNC": "1"
+        "NODE_ENV": "production"
       },
       "ios": {
         "buildConfiguration": "Release",
